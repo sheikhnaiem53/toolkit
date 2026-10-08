@@ -25,21 +25,26 @@
 </head>
 <body>
 <div class="app">
-<header class="topbar"><a class="back" href="index.html">‹</a><h1>🤖 AI Tools Directory</h1></header>
+<header class="topbar"><a class="back" href="index.html">‹</a><h1>AI Tools Directory</h1></header>
 <main class="page">
 <div class="ad-slot">AdSense — In-article Ad</div>
 <p class="count-line" id="countLine"></p>
 <div class="dir-search"><input id="q" type="search" placeholder="🔍 AI tool खोजो... (jaise: video, photo, chat)"></div>
 <div class="cat-row" id="catRow"></div>
 <div class="tool-grid" id="grid"></div>
+<div style="text-align:center;padding:1rem"><button class="btn secondary" id="moreBtn" hidden></button></div>
 <div class="ad-slot">AdSense — In-article Ad</div>
 <p class="muted" style="margin-top:12px">💡 Ye duniya ke mashhoor AI tools ki directory hai — link par tap karo, tool ki official site khulegi. Koi link kaam na kare to <a href="contact.html">humein batao</a>, turant fix karenge!</p>
 </main>
-<nav class="bottomnav">
-<a href="index.html">🏠<span>होम</span></a>
-<a href="tools.html">🧰<span>टूल्स</span></a>
-<a href="saved.html">🔖<span>सेव्ड</span></a>
-<a href="account.html">👤<span>खाता</span></a>
+<footer class="site-footer">
+  <div class="flinks"><a href="about.html">हमारे बारे में</a><a href="contact.html">संपर्क</a><a href="privacy.html">प्राइवेसी</a><a href="terms.html">नियम</a></div>
+  <p>© 2026 Toolkit · सारे फ्री टूल एक जगह</p>
+</footer>
+
+<nav class="bottom-nav">
+  <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><span>होम</span></a>
+  <a href="tools.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg><span>टूल्स</span></a>
+  <a href="saved.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span>सेव्ड</span></a>
 </nav>
 </div>
 <script src="assets/ai-tools-data.js"></script>
@@ -53,11 +58,24 @@ function renderCats(){
   catRow.innerHTML=h;
   catRow.querySelectorAll('.cat-btn').forEach(b=>b.onclick=()=>{curCat=b.dataset.c;renderCats();render();});
 }
-function render(){
-  const list=AI_TOOLS.filter(t=>(curCat==='all'||t.c===curCat)&&(!query||(t.n+' '+t.d).toLowerCase().includes(query)));
-  countLine.textContent='📦 '+list.length+' AI Tools';
-  grid.innerHTML=list.map(t=>'<div class="tcard"><span class="tag '+t.t+'">'+tagHi[t.t]+'</span><b>'+t.n+'</b><p>'+t.d+'</p><a class="go" href="'+t.u+'" target="_blank" rel="noopener">खोलो ↗</a></div>').join('')||'<p class="muted">Kuch nahi mila — kuch aur try karo!</p>';
+const PAGE=90;let curList=[],shown=0;
+const moreBtn=document.getElementById('moreBtn');
+function card(t){return '<div class="tcard"><span class="tag '+t.t+'">'+tagHi[t.t]+'</span><b>'+t.n+'</b><p>'+t.d+'</p><a class="go" href="'+t.u+'" target="_blank" rel="noopener">खोलो ↗</a></div>';}
+function appendBatch(){
+  const next=curList.slice(shown,shown+PAGE);
+  grid.insertAdjacentHTML('beforeend',next.map(card).join(''));
+  shown+=next.length;
+  if(shown<curList.length){moreBtn.hidden=false;moreBtn.textContent='और दिखाओ ('+(curList.length-shown)+' बाकी)';}
+  else moreBtn.hidden=true;
 }
+function render(){
+  curList=AI_TOOLS.filter(t=>(curCat==='all'||t.c===curCat)&&(!query||(t.n+' '+t.d).toLowerCase().includes(query)));
+  countLine.textContent=curList.length+' AI Tools';
+  grid.innerHTML='';shown=0;
+  if(!curList.length){grid.innerHTML='<p class="muted">Kuch nahi mila — kuch aur try karo!</p>';moreBtn.hidden=true;return;}
+  appendBatch();
+}
+moreBtn.onclick=appendBatch;
 q.oninput=()=>{query=q.value.trim().toLowerCase();render();};
 renderCats();render();
 </script>
