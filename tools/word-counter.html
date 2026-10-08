@@ -1,55 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Word Counter — Count Words & Characters Online Free | Toolkit</title>
-<meta name="description" content="Free word counter: count words, characters, sentences and reading time for essays, articles and posts.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Word Counter — शब्द गिनो | Toolkit</title>
+<meta name="description" content="फ्री वर्ड काउंटर: शब्द, अक्षर, वाक्य गिनो। टाइप करते ही नतीजा।">
+<meta name="theme-color" content="#6c4dff">
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
 <body>
-<header class="site-header">
-  <div class="header-inner">
-    <a class="logo" href="../index.html">Toolkit<span>.free</span></a>
-    <nav class="main-nav"><a href="../index.html">Home</a><a href="../about.html">About</a><a href="../contact.html">Contact</a></nav>
-  </div>
-</header>
-<main>
-  <div class="container narrow">
-    <div class="tool-header">
-      <h1>Word Counter</h1>
-      <p>Paste your text to count words, characters, sentences and estimated reading time — live as you type.</p>
+<div class="tool-top"><a class="back-btn" href="../index.html">←</a><h1>📝 Word Counter</h1></div>
+<div class="tool-body">
+  <p style="color:var(--muted);margin-bottom:1rem">निबंध, पोस्ट, आर्टिकल — लिखते ही गिनती।</p>
+  <div class="panel">
+    <div class="field">
+      <label for="words-input">अपना टेक्स्ट</label>
+      <textarea id="words-input" placeholder="यहाँ लिखो या पेस्ट करो..."></textarea>
     </div>
-    <div class="panel">
-      <div class="field">
-        <label for="words-input">Your text</label>
-        <textarea id="words-input" placeholder="Type or paste your text here..."></textarea>
-      </div>
-      <div class="stat-grid">
-        <div class="stat"><b id="w-words">0</b><span>Words</span></div>
-        <div class="stat"><b id="w-chars">0</b><span>Characters</span></div>
-        <div class="stat"><b id="w-chars-ns">0</b><span>Without spaces</span></div>
-        <div class="stat"><b id="w-sent">0</b><span>Sentences</span></div>
-        <div class="stat"><b id="w-read">0</b><span>Min. reading</span></div>
-      </div>
+    <div class="stat-grid">
+      <div class="stat"><b id="w-words">0</b><span>शब्द</span></div>
+      <div class="stat"><b id="w-chars">0</b><span>अक्षर</span></div>
+      <div class="stat"><b id="w-chars-ns">0</b><span>बिना स्पेस</span></div>
+      <div class="stat"><b id="w-sent">0</b><span>वाक्य</span></div>
+      <div class="stat"><b id="w-read">0</b><span>मिनट पढ़ने में</span></div>
     </div>
-    <div class="ad-slot">Advertisement</div>
-    <section class="prose">
-      <h2>Who is it for?</h2>
-      <p>Students checking essay length, writers meeting word targets, job seekers trimming resumes, and social media managers fitting character limits — the counter updates instantly as you type, and your text never leaves your browser.</p>
-    </section>
   </div>
-</main>
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-grid">
-      <div><h4>Toolkit</h4><a href="../about.html">About us</a><a href="../contact.html">Contact</a></div>
-      <div><h4>Tools</h4><a href="image-compressor.html">Image Compressor</a><a href="qr-generator.html">QR Code Generator</a><a href="password-generator.html">Password Generator</a></div>
-      <div><h4>Legal</h4><a href="../privacy.html">Privacy Policy</a><a href="../terms.html">Terms of Use</a></div>
-    </div>
-    <div class="footer-bottom">© 2026 Toolkit. All rights reserved.</div>
-  </div>
-</footer>
+  <div class="ad-slot">Advertisement</div>
+</div>
 <script src="../assets/tools.js"></script>
 </body>
 </html>

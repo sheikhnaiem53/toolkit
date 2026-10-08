@@ -1,52 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact Us | Toolkit</title>
-<meta name="description" content="Contact the Toolkit team — suggestions, bug reports and tool requests welcome.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>संपर्क करो | Toolkit</title>
+<meta name="theme-color" content="#6c4dff">
 <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
-<header class="site-header">
-  <div class="header-inner">
-    <a class="logo" href="index.html">Toolkit<span>.free</span></a>
-    <nav class="main-nav"><a href="index.html">Home</a><a href="about.html">About</a><a href="contact.html" class="active">Contact</a></nav>
-  </div>
-</header>
-<main>
-  <div class="container narrow">
-    <h1>Contact Us</h1>
-    <p style="color:var(--muted);margin:.4rem 0 1.4rem">Suggestions, bug reports or a tool you want us to build — we read everything.</p>
-    <div class="panel">
-      <!-- No backend on a static site: mailto form. Replace the address below with your own. -->
-      <form action="mailto:hello@example.com" method="post" enctype="text/plain">
-        <div class="field">
-          <label for="c-name">Your name</label>
-          <input type="text" id="c-name" name="name" required>
-        </div>
-        <div class="field">
-          <label for="c-email">Your email</label>
-          <input type="text" id="c-email" name="email" type="email" required>
-        </div>
-        <div class="field">
-          <label for="c-msg">Message</label>
-          <textarea id="c-msg" name="message" required placeholder="Which tool should we build next?"></textarea>
-        </div>
-        <button class="btn" type="submit">Send message</button>
-      </form>
-    </div>
-  </div>
-</main>
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-grid">
-      <div><h4>Toolkit</h4><a href="about.html">About us</a><a href="contact.html">Contact</a></div>
-      <div><h4>Tools</h4><a href="tools/image-compressor.html">Image Compressor</a><a href="tools/qr-generator.html">QR Code Generator</a><a href="tools/password-generator.html">Password Generator</a></div>
-      <div><h4>Legal</h4><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a></div>
-    </div>
-    <div class="footer-bottom">© 2026 Toolkit. All rights reserved.</div>
-  </div>
-</footer>
+<div class="tool-top"><a class="back-btn" href="index.html">←</a><h1>✉️ संपर्क करो</h1></div>
+<div class="tool-body">
+<p style="color:var(--muted);margin-bottom:1rem">सुझाव, बग रिपोर्ट या नया टूल चाहिए? बताओ — हम पढ़ते हैं।</p>
+<div class="panel">
+<form action="mailto:hello@example.com" method="post" enctype="text/plain">
+<div class="field"><label for="c-name">आपका नाम</label><input type="text" id="c-name" name="name" required></div>
+<div class="field"><label for="c-email">आपका ईमेल</label><input type="text" id="c-email" name="email" required></div>
+<div class="field"><label for="c-msg">संदेश</label><textarea id="c-msg" name="message" required placeholder="कौन सा नया टूल बनाएं?"></textarea></div>
+<button class="btn" type="submit">भेजो</button>
+</form>
+</div>
+</div>
 </body>
 </html>

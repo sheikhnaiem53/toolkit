@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>सेव्ड टूल्स | Toolkit</title>
+<meta name="description" content="आपके सेव किए हुए फेवरेट टूल्स।">
+<meta name="theme-color" content="#6c4dff">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<div class="page-head"><h1>⭐ सेव्ड टूल्स</h1></div>
+<div class="tool-grid" id="saved-grid"></div>
+<div id="saved-empty" class="empty" hidden>
+  <div class="big-ico">⭐</div>
+  <p>अभी कुछ सेव नहीं किया।<br>किसी टूल के ⭐ पर टैप करो — वो यहाँ दिखेगा।</p>
+</div>
+
+<nav class="bottom-nav">
+  <a href="index.html"><span class="ico">🏠</span>होम</a>
+  <a href="tools.html"><span class="ico">💼</span>टूल्स</a>
+  <a href="saved.html" class="active"><span class="ico">⭐</span>सेव्ड</a>
+  <a href="account.html"><span class="ico">👤</span>खाता</a>
+</nav>
+
+<script src="assets/app.js"></script>
+<script>
+  const grid = document.getElementById('saved-grid');
+  const draw = () => {
+    const list = TOOLS.filter(t => isSaved(t.id));
+    document.getElementById('saved-empty').hidden = list.length > 0;
+    renderGrid(grid, list, '');
+  };
+  window.addEventListener('storage', draw);
+  document.addEventListener('click', e => { if (e.target.classList.contains('star')) setTimeout(draw, 50); });
+  draw();
+</script>
+</body>
+</html>

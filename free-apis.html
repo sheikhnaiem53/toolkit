@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Free APIs — डेवलपर्स के लिए मुफ्त APIs | Toolkit</title>
+<meta name="description" content="बिना API key के फ्री APIs की लिस्ट: AI, मौसम, जोक्स, URL shortener और बहुत कुछ — डेवलपर्स के लिए।">
+<meta name="theme-color" content="#6c4dff">
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+.api-card { background:#fff; border-radius:20px; padding:1.2rem; margin:0 1.2rem 1rem; box-shadow:0 3px 12px rgba(27,27,47,.06); }
+.api-card h3 { font-size:1.05rem; display:flex; align-items:center; gap:.5rem; flex-wrap:wrap; }
+.badge { font-size:.72rem; font-weight:800; padding:.2rem .6rem; border-radius:999px; }
+.badge.free { background:#dcfce7; color:#166534; }
+.badge.key { background:#fef9c3; color:#854d0e; }
+.api-card p { color:#4a4a63; font-size:.9rem; margin:.5rem 0 .8rem; }
+.api-card code { display:block; background:#f4f2fa; border-radius:10px; padding:.6rem .8rem; font-size:.78rem; overflow-x:auto; white-space:nowrap; margin-bottom:.8rem; }
+.api-links { display:flex; gap:.6rem; }
+.api-links a { font-size:.88rem; font-weight:700; color:var(--brand); text-decoration:none; }
+.cat-title { padding:1.2rem 1.3rem .6rem; font-size:1.15rem; }
+</style>
+</head>
+<body>
+<div class="tool-top">
+  <a class="back-btn" href="index.html">←</a>
+  <h1>🔌 Free APIs</h1>
+</div>
+<p style="color:var(--muted);padding:0 1.2rem 1rem">डेवलपर्स के लिए — बिना पैसे, बिना API key (जहाँ लिखा है) इस्तेमाल करो।</p>
+
+<h2 class="cat-title">🤖 AI APIs</h2>
+<div class="api-card">
+  <h3>Pollinations Text <span class="badge free">NO KEY</span></h3>
+  <p>फ्री AI टेक्स्ट जनरेशन — चैट, लेख, शायरी। GET request से सीधा जवाब।</p>
+  <code>https://text.pollinations.ai/आपका-सवाल</code>
+  <div class="api-links"><a href="https://github.com/pollinations-ai/pollinations" target="_blank" rel="noopener">📄 Docs →</a></div>
+</div>
+<div class="api-card">
+  <h3>Pollinations Image <span class="badge free">NO KEY</span></h3>
+  <p>फ्री AI इमेज जनरेशन — prompt से फोटो। URL ही image है।</p>
+  <code>https://image.pollinations.ai/prompt/a-cat-in-garden</code>
+  <div class="api-links"><a href="https://github.com/pollinations-ai/pollinations" target="_blank" rel="noopener">📄 Docs →</a></div>
+</div>
+
+<h2 class="cat-title">🌤️ Data APIs</h2>
+<div class="api-card">
+  <h3>Open-Meteo Weather <span class="badge free">NO KEY</span></h3>
+  <p>फ्री मौसम API — किसी भी शहर का live weather।</p>
+  <code>https://api.open-meteo.com/v1/forecast?latitude=28.6&amp;longitude=77.2&amp;current_weather=true</code>
+  <div class="api-links"><a href="https://open-meteo.com/en/docs" target="_blank" rel="noopener">📄 Docs →</a></div>
+</div>
+<div class="api-card">
+  <h3>Dictionary API <span class="badge free">NO KEY</span></h3>
+  <p>English शब्दों के अर्थ, उच्चारण, उदाहरण।</p>
+  <code>https://api.dictionaryapi.dev/api/v2/entries/en/hello</code>
+  <div class="api-links"><a href="https://dictionaryapi.dev/" target="_blank" rel="noopener">📄 Docs →</a></div>
+</div>
+<div class="api-card">
+  <h3>GitHub API <span class="badge free">NO KEY*</span></h3>
+  <p>Public repos, users, commits का डेटा। *बिना key: 60 req/hour।</p>
+  <code>https://api.github.com/users/octocat</code>
+  <div class="api-links"><a href="https://docs.github.com/en/rest" target="_blank" rel="noopener">📄 Docs →</a></div>
+</div>
+<div class="api-card">
+  <h3>JSONPlaceholder <span class="badge free">NO KEY</span></h3>
+  <p>Testing के लिए फ्री fake REST API — posts, users, todos।</p>
+  <code>https://jsonplaceholder.typicode.com/posts/1</code>
+  <div class="api-links"><a href="https://jsonplaceholder.typicode.com/" target="_blank" rel="noopener">📄 Docs →</a></div>
+</div>
+
+<h2 class="cat-title">😄 Fun APIs</h2>
+<div class="api-card">
+  <h3>JokeAPI <span class="badge free">NO KEY</span></h3>
+  <p>प्रोग्रामिंग और जनरल जोक्स — safe-mode के साथ।</p>
+  <code>https://v2.jokeapi.dev/joke/Any?safe-mode&amp;type=single</code>
+  <div class="api-links"><a href="https://jokeapi.dev/" target="_blank" rel="noopener">📄 Docs →</a></div>
+</div>
+<div class="api-card">
+  <h3>Advice Slip <span class="badge free">NO KEY</span></h3>
+  <p>Random सलाह — एक लाइन की wisdom।</p>
+  <code>https://api.adviceslip.com/advice</code>
+  <div class="api-links"><a href="https://api.adviceslip.com/" target="_blank" rel="noopener">📄 Docs →</a></div>
+</div>
+<div class="api-card">
+  <h3>Cat Facts <span class="badge free">NO KEY</span></h3>
+  <p>बिल्लियों के मज़ेदार facts।</p>
+  <code>https://catfact.ninja/fact</code>
+  <div class="api-links"><a href="https://catfact.ninja/" target="_blank" rel="noopener">📄 Docs →</a></div>
+</div>
+
+<h2 class="cat-title">🔗 Utility APIs</h2>
+<div class="api-card">
+  <h3>is.gd Shortener <span class="badge free">NO KEY</span></h3>
+  <p>लंबे URL को छोटा करो — एक GET request में।</p>
+  <code>https://is.gd/create.php?format=simple&amp;url=YOUR_URL</code>
+  <div class="api-links"><a href="https://is.gd/developers.php" target="_blank" rel="noopener">📄 Docs →</a></div>
+</div>
+
+<div class="ad-slot">Advertisement</div>
+
+<div class="info-card">
+  <h2>⚠️ ध्यान दें</h2>
+  <p>ये सब third-party फ्री सेवाएं हैं — इनके नियम और लिमिट बदल सकते हैं। कमर्शियल इस्तेमाल से पहले उनकी शर्तें पढ़ लें।</p>
+</div>
+
+<nav class="bottom-nav">
+  <a href="index.html"><span class="ico">🏠</span>होम</a>
+  <a href="tools.html"><span class="ico">💼</span>टूल्स</a>
+  <a href="saved.html"><span class="ico">⭐</span>सेव्ड</a>
+  <a href="account.html"><span class="ico">👤</span>खाता</a>
+</nav>
+</body>
+</html>

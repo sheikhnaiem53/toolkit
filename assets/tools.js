@@ -199,3 +199,191 @@ if ($('uc-cat')) {
   ['uc-val', 'uc-from', 'uc-to'].forEach(id => $(id).addEventListener('input', convert));
   fillUnits();
 }
+
+/* ---------- Text to Speech ---------- */
+if ($('tts-speak')) {
+  const synth = window.speechSynthesis;
+  const fillVoices = () => {
+    const voices = synth.getVoices();
+    const sel = $('tts-voice');
+    sel.innerHTML = '';
+    voices.forEach((v, i) => {
+      const o = document.createElement('option');
+      o.value = i; o.textContent = v.name + ' (' + v.lang + ')';
+      if (v.lang.startsWith('hi')) o.selected = true;
+      sel.appendChild(o);
+    });
+    if (!sel.value && voices.length) sel.selectedIndex = 0;
+  };
+  fillVoices();
+  if (synth.onvoiceschanged !== undefined) synth.onvoiceschanged = fillVoices;
+  $('tts-rate').addEventListener('input', e => $('tts-rate-val').textContent = e.target.value + 'x');
+  $('tts-speak').addEventListener('click', () => {
+    synth.cancel();
+    const u = new SpeechSynthesisUtterance($('tts-text').value);
+    const voices = synth.getVoices();
+    if (voices[$('tts-voice').value]) u.voice = voices[$('tts-voice').value];
+    u.rate = parseFloat($('tts-rate').value);
+    synth.speak(u);
+  });
+  $('tts-stop').addEventListener('click', () => synth.cancel());
+}
+
+/* ---------- Color Picker ---------- */
+if ($('cp-input')) {
+  const upd = () => {
+    const hex = $('cp-input').value.toUpperCase();
+    const r = parseInt(hex.slice(1, 3), 16), g = parseInt(hex.slice(3, 5), 16), b = parseInt(hex.slice(5, 7), 16);
+    $('cp-hex').textContent = hex;
+    $('cp-rgb').textContent = 'rgb(' + r + ', ' + g + ', ' + b + ')';
+  };
+  $('cp-input').addEventListener('input', upd);
+  $('cp-copy').addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText($('cp-hex').textContent); alert('कॉपी हो गया! 📋'); }
+    catch { alert('कॉपी नहीं हुआ'); }
+  });
+  const presets = ['#6c4dff', '#4d96ff', '#00c853', '#ffab00', '#ff5252', '#ec407a', '#00bcd4', '#8d6e63', '#000000', '#ffffff'];
+  const box = $('cp-swatches');
+  presets.forEach(c => {
+    const s = document.createElement('div');
+    s.className = 'swatch'; s.style.background = c; s.title = c;
+    s.onclick = () => { $('cp-input').value = c; upd(); };
+    box.appendChild(s);
+  });
+  upd();
+}
+
+/* ---------- URL Shortener (is.gd) ---------- */
+if ($('us-go')) {
+  $('us-go').addEventListener('click', async () => {
+    let url = $('us-url').value.trim();
+    if (!url) { alert('पहले URL लिखो'); return; }
+    if (!/^https?:\/\//i.test(url)) url = 'https://' + url;
+    $('us-go').textContent = '⏳ छोटा हो रहा...';
+    try {
+      const r = await fetch('https://is.gd/create.php?format=simple&url=' + encodeURIComponent(url));
+      const short = (await r.text()).trim();
+      if (!short.startsWith('http')) throw new Error(short);
+      $('us-out').textContent = short;
+      $('us-result').hidden = false;
+    } catch (e) { alert('छोटा नहीं हो पाया — URL सही है? फिर try करो।'); }
+    $('us-go').textContent = '✂️ छोटा करो';
+  });
+  $('us-copy').addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText($('us-out').textContent); alert('कॉपी हो गया! 📋'); }
+    catch { alert('कॉपी नहीं हुआ'); }
+  });
+}
+
+/* ---------- EMI Calculator ---------- */
+if ($('emi-p')) {
+  const inr = new Intl.NumberFormat('en-IN', { maximumFractionDigits: 0 });
+  const calcEMI = () => {
+    const P = +$('emi-p').value, annual = +$('emi-r').value, years = +$('emi-n').value;
+    const r = annual / 12 / 100, n = years * 12;
+    const emi = r === 0 ? P / n : P * r * Math.pow(1 + r, n) / (Math.pow(1 + r, n) - 1);
+    $('emi-p-val').textContent = '₹' + inr.format(P);
+    $('emi-r-val').textContent = annual + '%';
+    $('emi-n-val').textContent = years + ' साल';
+    $('emi-emi').textContent = '₹' + inr.format(Math.round(emi));
+    $('emi-interest').textContent = '₹' + inr.format(Math.round(emi * n - P));
+    $('emi-total').textContent = '₹' + inr.format(Math.round(emi * n));
+  };
+  ['emi-p', 'emi-r', 'emi-n'].forEach(id => $(id).addEventListener('input', calcEMI));
+  calcEMI();
+}
+
+/* ---------- AI helpers (Pollinations — free, no key) ---------- */
+async function aiText(prompt) {
+  const r = await fetch('https://text.pollinations.ai/' + encodeURIComponent(prompt));
+  if (!r.ok) throw new Error('AI busy');
+  return (await r.text()).trim();
+}
+
+/* ---------- AI Chat ---------- */
+if ($('chat-send')) {
+  const box = $('chat-box');
+  const addMsg = (text, who) => {
+    const d = document.createElement('div');
+    d.className = 'msg ' + who; d.textContent = text;
+    box.appendChild(d); box.scrollTop = box.scrollHeight;
+    return d;
+  };
+  const send = async () => {
+    const q = $('chat-in').value.trim();
+    if (!q) return;
+    addMsg(q, 'user');
+    $('chat-in').value = '';
+    const typing = addMsg('सोच रहा है... 🤔', 'typing');
+    try {
+      const ans = await aiText('Reply in the same language as the user (Hindi or English). Keep it short and helpful. User: ' + q);
+      typing.className = 'msg ai'; typing.textContent = ans;
+    } catch { typing.className = 'msg ai'; typing.textContent = '😅 AI अभी व्यस्त है — थोड़ी देर में फिर try करो।'; }
+    box.scrollTop = box.scrollHeight;
+  };
+  $('chat-send').addEventListener('click', send);
+  $('chat-in').addEventListener('keydown', e => { if (e.key === 'Enter') send(); });
+}
+
+/* ---------- AI Image Generator ---------- */
+if ($('aig-go')) {
+  const make = () => {
+    const p = $('aig-prompt').value.trim();
+    if (!p) { alert('पहले बताओ कैसी फोटो चाहिए'); return; }
+    const [w, h] = $('aig-size').value.split('x');
+    const seed = Math.floor(Math.random() * 999999);
+    const url = 'https://image.pollinations.ai/prompt/' + encodeURIComponent(p) + '?width=' + w + '&height=' + h + '&nologo=true&seed=' + seed;
+    $('aig-go').textContent = '⏳ बन रही है...';
+    const img = $('aig-img');
+    img.onload = () => { $('aig-result').hidden = false; $('aig-go').textContent = '✨ फोटो बनाओ'; };
+    img.onerror = () => { alert('फोटो नहीं बन पाई — फिर try करो'); $('aig-go').textContent = '✨ फोटो बनाओ'; };
+    img.src = url;
+    $('aig-download').href = url;
+  };
+  $('aig-go').addEventListener('click', make);
+  $('aig-again').addEventListener('click', make);
+}
+
+/* ---------- AI Writer ---------- */
+if ($('aiw-go')) {
+  const PROMPTS = {
+    shayari: t => 'Write a beautiful 4-line Hindi shayari (Devanagari script) on: ' + t,
+    story: t => 'Write a short interesting story in Hindi (Devanagari, ~150 words) on: ' + t,
+    essay: t => 'Write a simple essay in Hindi (Devanagari, ~200 words) on: ' + t,
+    caption: t => 'Write 3 catchy social media captions in Hindi+English mix for: ' + t,
+    paraphrase: t => 'Rewrite this text in better, simpler Hindi without changing meaning: ' + t
+  };
+  $('aiw-go').addEventListener('click', async () => {
+    const mode = $('aiw-mode').value, topic = $('aiw-topic').value.trim();
+    if (!topic) { alert('पहले विषय लिखो'); return; }
+    $('aiw-go').textContent = '⏳ लिख रहा है...';
+    try {
+      $('aiw-out').textContent = await aiText(PROMPTS[mode](topic));
+      $('aiw-result').hidden = false;
+    } catch { alert('😅 AI अभी व्यस्त है — थोड़ी देर में फिर try करो।'); }
+    $('aiw-go').textContent = '✨ लिखवाओ';
+  });
+  $('aiw-copy').addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText($('aiw-out').textContent); alert('कॉपी हो गया! 📋'); }
+    catch { alert('कॉपी नहीं हुआ'); }
+  });
+}
+
+/* ---------- Hashtag Generator ---------- */
+if ($('ht-go')) {
+  $('ht-go').addEventListener('click', async () => {
+    const topic = $('ht-topic').value.trim();
+    if (!topic) { alert('पहले विषय लिखो'); return; }
+    $('ht-go').textContent = '⏳ बना रहा है...';
+    try {
+      const out = await aiText('Generate 15 trending hashtags (mix of popular and niche) for social media on this topic, comma separated, each starting with #: ' + topic);
+      $('ht-out').textContent = out;
+      $('ht-result').hidden = false;
+    } catch { alert('😅 AI अभी व्यस्त है — थोड़ी देर में फिर try करो।'); }
+    $('ht-go').textContent = '#️⃣ हैशटैग बनाओ';
+  });
+  $('ht-copy').addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText($('ht-out').textContent); alert('कॉपी हो गया! 📋'); }
+    catch { alert('कॉपी नहीं हुआ'); }
+  });
+}

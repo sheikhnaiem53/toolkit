@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>AI Image Generator — फ्री AI फोटो बनाओ | Toolkit</title>
+<meta name="description" content="फ्री AI इमेज जनरेटर: शब्दों में बताओ, AI फोटो बना देगा। बिना साइनअप।">
+<meta name="theme-color" content="#6c4dff">
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+<div class="tool-top">
+  <a class="back-btn" href="../index.html">←</a>
+  <h1>🎨 AI Image Generator</h1>
+</div>
+<div class="tool-body">
+  <p style="color:var(--muted);margin-bottom:1rem">बताओ कैसी फोटो चाहिए — AI बना देगा। (English में लिखने पर बेहतर नतीजे)</p>
+  <div class="panel">
+    <div class="field">
+      <label for="aig-prompt">फोटो का वर्णन</label>
+      <textarea id="aig-prompt" style="min-height:90px" placeholder="a cute cat sitting in a garden, sunset..."></textarea>
+    </div>
+    <div class="field">
+      <label for="aig-size">साइज़</label>
+      <select id="aig-size">
+        <option value="512x512">Square (512×512)</option>
+        <option value="512x768">Portrait (512×768)</option>
+        <option value="768x512">Landscape (768×512)</option>
+      </select>
+    </div>
+    <button class="btn" id="aig-go">✨ फोटो बनाओ</button>
+    <div id="aig-result" class="result" hidden style="text-align:center">
+      <img id="aig-img" alt="AI generated" style="max-width:100%;border-radius:12px">
+      <div class="btn-row" style="justify-content:center">
+        <a class="btn secondary" id="aig-download" download="ai-image.jpg">⬇️ डाउनलोड</a>
+        <button class="btn secondary" id="aig-again">🔄 फिर बनाओ</button>
+      </div>
+    </div>
+  </div>
+  <div class="ad-slot">Advertisement</div>
+  <div class="info-card">
+    <h2>नोट</h2>
+    <p>फ्री AI सेवा से फोटो बनती है — 10-30 सेकंड लग सकते हैं। गलत/आपत्तिजनक कंटेंट न बनाएं।</p>
+  </div>
+</div>
+<script src="../assets/tools.js"></script>
+</body>
+</html>

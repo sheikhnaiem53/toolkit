@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>URL Shortener — लंबा लिंक छोटा करो | Toolkit</title>
+<meta name="description" content="फ्री URL शॉर्टनर: लंबे लिंक को छोटा करो और आसानी से शेयर करो।">
+<meta name="theme-color" content="#6c4dff">
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+<div class="tool-top">
+  <a class="back-btn" href="../index.html">←</a>
+  <h1>🔗 URL Shortener</h1>
+</div>
+<div class="tool-body">
+  <p style="color:var(--muted);margin-bottom:1rem">लंबा लिंक पेस्ट करो — छोटा लिंक पाओ।</p>
+  <div class="panel">
+    <div class="field">
+      <label for="us-url">लंबा URL</label>
+      <input type="text" id="us-url" placeholder="https://example.com/very/long/link">
+    </div>
+    <button class="btn" id="us-go">✂️ छोटा करो</button>
+    <div id="us-result" class="result" hidden>
+      <span style="color:var(--muted);font-size:.9rem">छोटा लिंक</span>
+      <div class="big" style="font-size:1.15rem;word-break:break-all" id="us-out">—</div>
+      <div class="btn-row">
+        <button class="btn secondary" id="us-copy">📋 कॉपी करो</button>
+      </div>
+    </div>
+  </div>
+  <div class="ad-slot">Advertisement</div>
+  <div class="info-card">
+    <h2>नोट</h2>
+    <p>छोटे लिंक is.gd (फ्री सेवा) से बनते हैं। बहुत ज़रूरी/हमेशा वाले काम के लिए अपना डोमेन इस्तेमाल करें।</p>
+  </div>
+</div>
+<script src="../assets/tools.js"></script>
+</body>
+</html>

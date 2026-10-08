@@ -1,71 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GST Calculator — Add or Remove GST Online Free | Toolkit</title>
-<meta name="description" content="Free GST calculator for India: add or remove GST (5%, 12%, 18%, 28%) from any amount. Instant, private, no signup.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>GST Calculator — GST जोड़ो/घटाओ | Toolkit</title>
+<meta name="description" content="फ्री GST कैलकुलेटर: 5%, 12%, 18%, 28% GST जोड़ो या घटाओ।">
+<meta name="theme-color" content="#6c4dff">
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
 <body>
-<header class="site-header">
-  <div class="header-inner">
-    <a class="logo" href="../index.html">Toolkit<span>.free</span></a>
-    <nav class="main-nav"><a href="../index.html">Home</a><a href="../about.html">About</a><a href="../contact.html">Contact</a></nav>
-  </div>
-</header>
-<main>
-  <div class="container narrow">
-    <div class="tool-header">
-      <h1>GST Calculator</h1>
-      <p>Add GST to a price or extract GST from a GST-inclusive amount. All Indian slabs supported.</p>
+<div class="tool-top"><a class="back-btn" href="../index.html">←</a><h1>🧾 GST Calculator</h1></div>
+<div class="tool-body">
+  <p style="color:var(--muted);margin-bottom:1rem">GST जोड़ो या घटाओ — सारे भारतीय स्लैब।</p>
+  <div class="panel">
+    <div class="field">
+      <label for="gst-amt">राशि (₹)</label>
+      <input type="number" id="gst-amt" placeholder="जैसे 10000" step="any">
     </div>
-    <div class="panel">
-      <div class="field">
-        <label for="gst-amt">Amount (₹)</label>
-        <input type="number" id="gst-amt" placeholder="e.g. 10000" step="any">
-      </div>
-      <div class="field">
-        <label for="gst-rate">GST rate</label>
-        <select id="gst-rate">
-          <option value="5">5%</option>
-          <option value="12">12%</option>
-          <option value="18" selected>18%</option>
-          <option value="28">28%</option>
-        </select>
-      </div>
-      <div class="field">
-        <label>Calculation type</label>
-        <div class="radio-row">
-          <label><input type="radio" name="gst-mode" value="add" checked> Add GST</label>
-          <label><input type="radio" name="gst-mode" value="remove"> Remove GST</label>
-        </div>
-      </div>
-      <div class="result">
-        <div class="kv"><span>Base amount</span><b id="gst-base">—</b></div>
-        <div class="kv"><span>GST amount</span><b id="gst-tax">—</b></div>
-        <div class="kv"><span>Total</span><b id="gst-total" style="color:var(--brand)">—</b></div>
+    <div class="field">
+      <label for="gst-rate">GST दर</label>
+      <select id="gst-rate">
+        <option value="5">5%</option>
+        <option value="12">12%</option>
+        <option value="18" selected>18%</option>
+        <option value="28">28%</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>हिसाब का तरीका</label>
+      <div class="radio-row">
+        <label><input type="radio" name="gst-mode" value="add" checked> GST जोड़ो</label>
+        <label><input type="radio" name="gst-mode" value="remove"> GST घटाओ</label>
       </div>
     </div>
-    <div class="ad-slot">Advertisement</div>
-    <section class="prose">
-      <h2>How it works</h2>
-      <p><strong>Add GST:</strong> GST = amount × rate ÷ 100; total = amount + GST.<br>
-      <strong>Remove GST:</strong> base = total × 100 ÷ (100 + rate); GST = total − base.</p>
-      <p><em>Note:</em> this is a quick estimator, not tax advice. Confirm with your CA for filings.</p>
-    </section>
-  </div>
-</main>
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-grid">
-      <div><h4>Toolkit</h4><a href="../about.html">About us</a><a href="../contact.html">Contact</a></div>
-      <div><h4>Tools</h4><a href="image-compressor.html">Image Compressor</a><a href="qr-generator.html">QR Code Generator</a><a href="gst-calculator.html">GST Calculator</a></div>
-      <div><h4>Legal</h4><a href="../privacy.html">Privacy Policy</a><a href="../terms.html">Terms of Use</a></div>
+    <div class="result">
+      <div class="kv"><span>मूल राशि</span><b id="gst-base">—</b></div>
+      <div class="kv"><span>GST राशि</span><b id="gst-tax">—</b></div>
+      <div class="kv"><span>कुल</span><b id="gst-total" style="color:var(--brand)">—</b></div>
     </div>
-    <div class="footer-bottom">© 2026 Toolkit. All rights reserved.</div>
   </div>
-</footer>
+  <div class="ad-slot">Advertisement</div>
+  <div class="info-card"><h2>नोट</h2><p>ये तुरंत अनुमान है, टैक्स सलाह नहीं। फाइलिंग के लिए अपने CA से कन्फर्म करें।</p></div>
+</div>
 <script src="../assets/tools.js"></script>
 </body>
 </html>

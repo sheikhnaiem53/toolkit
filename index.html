@@ -1,136 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Toolkit — Free Online Tools: Image Compressor, QR Generator & More</title>
-<meta name="description" content="Free online tools that work right in your browser: compress images, generate QR codes, create strong passwords, count words, calculate age and convert units. No signup, 100% private.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Toolkit — सारे फ्री ऑनलाइन टूल एक जगह</title>
+<meta name="description" content="फ्री ऑनलाइन टूल्स: इमेज कंप्रेसर, QR जनरेटर, पासवर्ड जनरेटर, EMI कैलकुलेटर और बहुत कुछ। बिना साइनअप, 100% प्राइवेट।">
+<meta name="theme-color" content="#6c4dff">
 <link rel="stylesheet" href="assets/styles.css">
-<!-- ═══════════ Google AdSense ═══════════
-  1. Create your AdSense account at https://www.google.com/adsense
-  2. Add this site and get approved
-  3. Replace ca-pub-XXXXXXXXXXXXXXXX with YOUR publisher ID below, then uncomment
+<!-- ═══ Google AdSense: approval ke baad yahan script lagayen (dekhen ADSENSE-SETUP.md)
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
-═══════════════════════════════════════════ -->
+═══ -->
 </head>
 <body>
-<header class="site-header">
-  <div class="header-inner">
-    <a class="logo" href="index.html">Toolkit<span>.free</span></a>
-    <nav class="main-nav">
-      <a href="index.html" class="active">Home</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+<div class="greet">
+  <div>
+    <div class="hi">नमस्ते 🙏</div>
+    <h1>आज कौन सा टूल चाहिए?</h1>
   </div>
-</header>
+  <div class="avatar">H</div>
+</div>
 
-<main>
-  <div class="container">
-    <section class="hero">
-      <h1>Free Online Tools, Done Right</h1>
-      <p>Compress images, generate QR codes, create passwords and more — everything runs in your browser. No signup. No uploads. Your files never leave your device.</p>
-    </section>
+<div class="search-wrap">
+  <input class="search-bar" id="home-search" placeholder="🔍 टूल खोजें...">
+</div>
 
-    <!-- AdSense: leaderboard / responsive ad unit goes here after approval -->
+<div class="hero-banner">
+  <h2>सारे टूल एक जगह</h2>
+  <p>तेज़, फ्री और बिना झंझट के</p>
+  <a class="hero-btn" href="tools.html">सारे टूल देखें</a>
+</div>
 
-    <div class="tool-grid">
-      <a class="tool-card" href="tools/image-compressor.html">
-        <div class="tool-icon">🖼️</div>
-        <h3>Image Compressor</h3>
-        <p>Shrink JPG & PNG photos to WebP. Perfect for WhatsApp, forms and websites.</p>
-      </a>
-      <a class="tool-card" href="tools/qr-generator.html">
-        <div class="tool-icon">🔳</div>
-        <h3>QR Code Generator</h3>
-        <p>Turn any link or text into a scannable QR code. Download as PNG.</p>
-      </a>
-      <a class="tool-card" href="tools/password-generator.html">
-        <div class="tool-icon">🔑</div>
-        <h3>Password Generator</h3>
-        <p>Create strong, random passwords with one click. Nothing is stored.</p>
-      </a>
-      <a class="tool-card" href="tools/word-counter.html">
-        <div class="tool-icon">📝</div>
-        <h3>Word Counter</h3>
-        <p>Count words, characters and sentences. See estimated reading time.</p>
-      </a>
-      <a class="tool-card" href="tools/age-calculator.html">
-        <div class="tool-icon">🎂</div>
-        <h3>Age Calculator</h3>
-        <p>Find your exact age in years, months and days from your birth date.</p>
-      </a>
-      <a class="tool-card" href="tools/unit-converter.html">
-        <div class="tool-icon">📏</div>
-        <h3>Unit Converter</h3>
-        <p>Convert length, weight and temperature units instantly.</p>
-      </a>
-      <a class="tool-card" href="tools/gst-calculator.html">
-        <div class="tool-icon">🧾</div>
-        <h3>GST Calculator</h3>
-        <p>Add or remove GST (5/12/18/28%) from any amount. Made for India.</p>
-      </a>
-      <a class="tool-card" href="tools/bmi-calculator.html">
-        <div class="tool-icon">⚖️</div>
-        <h3>BMI Calculator</h3>
-        <p>Find your Body Mass Index and health category from height & weight.</p>
-      </a>
-      <a class="tool-card" href="tools/percentage-calculator.html">
-        <div class="tool-icon">📊</div>
-        <h3>Percentage Calculator</h3>
-        <p>X% of Y, what-percent, and increase/decrease — discounts to marks.</p>
-      </a>
-    </div>
+<div class="sec-head">
+  <h2>🤖 AI टूल्स</h2>
+  <a href="tools.html">सब देखें →</a>
+</div>
+<div class="tool-grid" id="ai-grid"></div>
 
-    <section class="prose narrow" style="margin-top:3rem">
-      <h2>Why use Toolkit?</h2>
-      <ul>
-        <li><strong>100% private:</strong> all processing happens in your browser. We never see or store your files.</li>
-        <li><strong>Free forever:</strong> every tool is free with no limits and no account needed.</li>
-        <li><strong>Fast & mobile-friendly:</strong> lightweight pages that load in seconds, even on slow networks.</li>
-        <li><strong>No spam, no popups:</strong> clean tools without the clutter.</li>
-      </ul>
-      <h2>Frequently asked questions</h2>
-      <div class="faq">
-        <details>
-          <summary>Are these tools really free?</summary>
-          <p>Yes. Every tool on this site is completely free to use, with no signup and no hidden charges. The site is supported by advertising.</p>
-        </details>
-        <details>
-          <summary>Do you upload my files to a server?</summary>
-          <p>No. Tools like the image compressor run entirely in your browser using JavaScript. Your files never leave your device.</p>
-        </details>
-        <details>
-          <summary>Do the tools work on mobile?</summary>
-          <p>Yes, every tool is designed mobile-first and works in any modern browser on Android and iOS.</p>
-        </details>
-      </div>
-    </section>
-  </div>
-</main>
+<div class="sec-head" style="margin-top:1.2rem">
+  <h2>पॉपुलर टूल्स</h2>
+  <a href="tools.html">सब देखें →</a>
+</div>
+<div class="tool-grid" id="popular-grid"></div>
 
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-grid">
-      <div>
-        <h4>Toolkit</h4>
-        <a href="about.html">About us</a>
-        <a href="contact.html">Contact</a>
-      </div>
-      <div>
-        <h4>Tools</h4>
-        <a href="tools/image-compressor.html">Image Compressor</a>
-        <a href="tools/qr-generator.html">QR Code Generator</a>
-        <a href="tools/password-generator.html">Password Generator</a>
-      </div>
-      <div>
-        <h4>Legal</h4>
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="terms.html">Terms of Use</a>
-      </div>
-    </div>
-    <div class="footer-bottom">© 2026 Toolkit. All rights reserved. Made for everyone, free forever.</div>
-  </div>
-</footer>
+<a href="free-apis.html" style="text-decoration:none">
+<div class="hero-banner" style="background:linear-gradient(120deg,#0f172a,#334155);margin-top:1.3rem">
+  <h2>🔌 Free APIs</h2>
+  <p>डेवलपर्स के लिए — बिना key वाली मुफ्त APIs की लिस्ट</p>
+  <span class="hero-btn">APIs देखो →</span>
+</div>
+</a>
+
+<div class="ad-slot">Advertisement</div>
+
+<div class="info-card">
+  <h2>Toolkit क्यों?</h2>
+  <ul>
+    <li>🔒 <strong>100% प्राइवेट</strong> — सब कुछ आपके फोन में होता है, कोई फाइल कहीं नहीं जाती</li>
+    <li>🆓 <strong>बिल्कुल फ्री</strong> — कोई साइनअप नहीं, कोई लिमिट नहीं</li>
+    <li>⚡ <strong>तेज़</strong> — हल्के पेज, धीमे नेट पर भी चलें</li>
+  </ul>
+</div>
+
+<nav class="bottom-nav">
+  <a href="index.html" class="active"><span class="ico">🏠</span>होम</a>
+  <a href="tools.html"><span class="ico">💼</span>टूल्स</a>
+  <a href="saved.html"><span class="ico">⭐</span>सेव्ड</a>
+  <a href="account.html"><span class="ico">👤</span>खाता</a>
+</nav>
+
+<script src="assets/app.js"></script>
+<script>
+  const popular = TOOLS.filter(t => t.popular && !t.ai);
+  const aiTools = TOOLS.filter(t => t.ai);
+  renderGrid(document.getElementById('ai-grid'), aiTools, '');
+  bindSearch('home-search', 'popular-grid', popular, '', 'कोई टूल नहीं मिला');
+</script>
 </body>
 </html>

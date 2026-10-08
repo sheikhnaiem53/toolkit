@@ -1,68 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Unit Converter — Length, Weight, Temperature | Toolkit</title>
-<meta name="description" content="Free unit converter: convert length (km, miles, feet), weight (kg, pounds) and temperature (Celsius, Fahrenheit) instantly.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Unit Converter — इकाई बदलो | Toolkit</title>
+<meta name="description" content="फ्री यूनिट कन्वर्टर: लंबाई, वज़न, तापमान तुरंत बदलो।">
+<meta name="theme-color" content="#6c4dff">
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
 <body>
-<header class="site-header">
-  <div class="header-inner">
-    <a class="logo" href="../index.html">Toolkit<span>.free</span></a>
-    <nav class="main-nav"><a href="../index.html">Home</a><a href="../about.html">About</a><a href="../contact.html">Contact</a></nav>
-  </div>
-</header>
-<main>
-  <div class="container narrow">
-    <div class="tool-header">
-      <h1>Unit Converter</h1>
-      <p>Convert length, weight and temperature units instantly. Pick a category, enter a value, done.</p>
+<div class="tool-top"><a class="back-btn" href="../index.html">←</a><h1>📏 Unit Converter</h1></div>
+<div class="tool-body">
+  <p style="color:var(--muted);margin-bottom:1rem">लंबाई, वज़न, तापमान — तुरंत बदलो।</p>
+  <div class="panel">
+    <div class="field">
+      <label for="uc-cat">श्रेणी</label>
+      <select id="uc-cat">
+        <option value="length">लंबाई</option>
+        <option value="weight">वज़न</option>
+        <option value="temp">तापमान</option>
+      </select>
     </div>
-    <div class="panel">
-      <div class="field">
-        <label for="uc-cat">Category</label>
-        <select id="uc-cat">
-          <option value="length">Length</option>
-          <option value="weight">Weight</option>
-          <option value="temp">Temperature</option>
-        </select>
-      </div>
-      <div class="field">
-        <label for="uc-val">Value</label>
-        <input type="number" id="uc-val" placeholder="Enter value" step="any">
-      </div>
-      <div class="field" style="display:flex;gap:.8rem">
-        <div style="flex:1"><label for="uc-from">From</label><select id="uc-from"></select></div>
-        <div style="flex:1"><label for="uc-to">To</label><select id="uc-to"></select></div>
-      </div>
-      <div class="result">
-        <span style="color:var(--muted);font-size:.9rem">Result</span>
-        <div class="big" id="uc-out">—</div>
-      </div>
+    <div class="field">
+      <label for="uc-val">मान</label>
+      <input type="number" id="uc-val" placeholder="संख्या लिखो" step="any">
     </div>
-    <div class="ad-slot">Advertisement</div>
-    <section class="prose">
-      <h2>Supported units</h2>
-      <ul>
-        <li><strong>Length:</strong> kilometres, metres, centimetres, miles, yards, feet, inches</li>
-        <li><strong>Weight:</strong> kilograms, grams, pounds, ounces</li>
-        <li><strong>Temperature:</strong> Celsius, Fahrenheit, Kelvin</li>
-      </ul>
-    </section>
-  </div>
-</main>
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-grid">
-      <div><h4>Toolkit</h4><a href="../about.html">About us</a><a href="../contact.html">Contact</a></div>
-      <div><h4>Tools</h4><a href="image-compressor.html">Image Compressor</a><a href="qr-generator.html">QR Code Generator</a><a href="password-generator.html">Password Generator</a></div>
-      <div><h4>Legal</h4><a href="../privacy.html">Privacy Policy</a><a href="../terms.html">Terms of Use</a></div>
+    <div class="field" style="display:flex;gap:.8rem">
+      <div style="flex:1"><label for="uc-from">से</label><select id="uc-from"></select></div>
+      <div style="flex:1"><label for="uc-to">तक</label><select id="uc-to"></select></div>
     </div>
-    <div class="footer-bottom">© 2026 Toolkit. All rights reserved.</div>
+    <div class="result">
+      <span style="color:var(--muted);font-size:.9rem">नतीजा</span>
+      <div class="big" id="uc-out">—</div>
+    </div>
   </div>
-</footer>
+  <div class="ad-slot">Advertisement</div>
+</div>
 <script src="../assets/tools.js"></script>
 </body>
 </html>

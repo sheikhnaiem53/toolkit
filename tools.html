@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>सारे टूल्स | Toolkit</title>
+<meta name="description" content="Toolkit के सारे फ्री ऑनलाइन टूल्स एक जगह।">
+<meta name="theme-color" content="#6c4dff">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<div class="page-head"><h1>🧰 सारे टूल्स</h1></div>
+<div class="search-wrap">
+  <input class="search-bar" id="all-search" placeholder="🔍 टूल खोजें...">
+</div>
+<div class="tool-grid" id="all-grid"></div>
+<div class="ad-slot">Advertisement</div>
+
+<nav class="bottom-nav">
+  <a href="index.html"><span class="ico">🏠</span>होम</a>
+  <a href="tools.html" class="active"><span class="ico">💼</span>टूल्स</a>
+  <a href="saved.html"><span class="ico">⭐</span>सेव्ड</a>
+  <a href="account.html"><span class="ico">👤</span>खाता</a>
+</nav>
+
+<script src="assets/app.js"></script>
+<script>
+  bindSearch('all-search', 'all-grid', TOOLS, '', 'कोई टूल नहीं मिला');
+</script>
+</body>
+</html>

@@ -1,81 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Image Compressor — Reduce JPG/PNG Size Online Free | Toolkit</title>
-<meta name="description" content="Compress images online for free. Convert JPG and PNG to WebP or JPEG right in your browser — no upload, 100% private.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Image Compressor — फोटो छोटी करो | Toolkit</title>
+<meta name="description" content="फ्री इमेज कंप्रेसर: JPG/PNG को WebP में बदलो। 100% प्राइवेट।">
+<meta name="theme-color" content="#6c4dff">
 <link rel="stylesheet" href="../assets/styles.css">
-<!-- AdSense script goes here after approval (see ADSENSE-SETUP.md) -->
 </head>
 <body>
-<header class="site-header">
-  <div class="header-inner">
-    <a class="logo" href="../index.html">Toolkit<span>.free</span></a>
-    <nav class="main-nav">
-      <a href="../index.html">Home</a>
-      <a href="../about.html">About</a>
-      <a href="../contact.html">Contact</a>
-    </nav>
-  </div>
-</header>
-
-<main>
-  <div class="container narrow">
-    <div class="tool-header">
-      <h1>Image Compressor</h1>
-      <p>Reduce photo size for WhatsApp, online forms and websites. Your image never leaves your device.</p>
+<div class="tool-top"><a class="back-btn" href="../index.html">←</a><h1>🖼️ Image Compressor</h1></div>
+<div class="tool-body">
+  <p style="color:var(--muted);margin-bottom:1rem">फोटो छोटी करो — WhatsApp, फॉर्म, वेबसाइट के लिए। फाइल आपके फोन में ही रहती है।</p>
+  <div class="panel">
+    <label class="file-btn">📁 फोटो चुनो<input type="file" id="img-input" accept="image/*" hidden></label>
+    <div class="field">
+      <label>क्वालिटी <span class="val" id="img-q-val">80%</span></label>
+      <input type="range" id="img-q" min="10" max="95" step="5" value="80">
     </div>
-
-    <div class="panel">
-      <label class="file-btn">Choose image
-        <input type="file" id="img-input" accept="image/*" hidden>
-      </label>
-      <div class="field">
-        <label>Quality <span class="val" id="img-q-val">80%</span></label>
-        <input type="range" id="img-q" min="10" max="95" step="5" value="80">
-      </div>
-      <div class="field">
-        <label>Output format</label>
-        <div class="radio-row">
-          <label><input type="radio" name="img-fmt" value="webp" checked> WebP (smallest)</label>
-          <label><input type="radio" name="img-fmt" value="jpeg"> JPEG</label>
-        </div>
-      </div>
-      <div id="img-result" class="result" hidden>
-        <div class="kv"><span>Original size</span><b id="img-before">—</b></div>
-        <div class="kv"><span>Compressed size</span><b id="img-after">—</b></div>
-        <div class="kv"><span>Saved</span><b id="img-saved">—</b></div>
-        <img id="img-preview" alt="Compressed preview">
-        <div class="btn-row"><a id="img-download" class="btn" download="compressed">Download compressed image</a></div>
+    <div class="field">
+      <label>फॉर्मेट</label>
+      <div class="radio-row">
+        <label><input type="radio" name="img-fmt" value="webp" checked> WebP (सबसे छोटा)</label>
+        <label><input type="radio" name="img-fmt" value="jpeg"> JPEG</label>
       </div>
     </div>
-
-    <div class="ad-slot">Advertisement</div>
-
-    <section class="prose">
-      <h2>How it works</h2>
-      <p>Select any JPG or PNG image, choose a quality level and output format, and the tool compresses it instantly using your browser's built-in canvas engine. Large photos are automatically resized to a maximum of 1920px on the longest side — ideal for web uploads and messaging apps.</p>
-      <h2>Why WebP?</h2>
-      <p>WebP images are typically 25–35% smaller than JPEG at the same visual quality, and are supported by all modern browsers, WhatsApp and most upload forms.</p>
-      <div class="faq">
-        <details><summary>Is my photo uploaded anywhere?</summary><p>No. Compression happens locally in your browser. Nothing is sent to any server.</p></details>
-        <details><summary>What is the maximum file size?</summary><p>There is no hard limit, but very large images (50MP+) may be slow on older phones.</p></details>
-      </div>
-    </section>
-  </div>
-</main>
-
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-grid">
-      <div><h4>Toolkit</h4><a href="../about.html">About us</a><a href="../contact.html">Contact</a></div>
-      <div><h4>Tools</h4><a href="image-compressor.html">Image Compressor</a><a href="qr-generator.html">QR Code Generator</a><a href="password-generator.html">Password Generator</a></div>
-      <div><h4>Legal</h4><a href="../privacy.html">Privacy Policy</a><a href="../terms.html">Terms of Use</a></div>
+    <div id="img-result" class="result" hidden>
+      <div class="kv"><span>पहले</span><b id="img-before">—</b></div>
+      <div class="kv"><span>अब</span><b id="img-after">—</b></div>
+      <div class="kv"><span>बचत</span><b id="img-saved">—</b></div>
+      <img id="img-preview" alt="preview">
+      <div class="btn-row"><a id="img-download" class="btn" download="compressed">⬇️ डाउनलोड करो</a></div>
     </div>
-    <div class="footer-bottom">© 2026 Toolkit. All rights reserved.</div>
   </div>
-</footer>
+  <div class="ad-slot">Advertisement</div>
+  <div class="info-card"><h2>कैसे काम करता है?</h2><p>सब कुछ आपके ब्राउज़र में होता है — कोई अपलोड नहीं। बड़ी फोटो अपने आप 1920px तक छोटी हो जाती है। WebP फॉर्मेट JPEG से 25-35% छोटा होता है।</p></div>
+</div>
 <script src="../assets/tools.js"></script>
 </body>
 </html>

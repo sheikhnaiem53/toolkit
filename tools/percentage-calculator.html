@@ -1,68 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Percentage Calculator — % Of, Increase, Decrease | Toolkit</title>
-<meta name="description" content="Free percentage calculator: find X% of Y, what percent one number is of another, and percentage increase or decrease.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Percentage Calculator — प्रतिशत निकालो | Toolkit</title>
+<meta name="description" content="फ्री परसेंटेज कैलकुलेटर: छूट, नंबर, बढ़त-घटत — सब हिसाब एक जगह।">
+<meta name="theme-color" content="#6c4dff">
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
 <body>
-<header class="site-header">
-  <div class="header-inner">
-    <a class="logo" href="../index.html">Toolkit<span>.free</span></a>
-    <nav class="main-nav"><a href="../index.html">Home</a><a href="../about.html">About</a><a href="../contact.html">Contact</a></nav>
+<div class="tool-top"><a class="back-btn" href="../index.html">←</a><h1>📊 Percentage Calculator</h1></div>
+<div class="tool-body">
+  <p style="color:var(--muted);margin-bottom:1rem">छूट, नंबर, बढ़त — रोज़ के प्रतिशत हिसाब।</p>
+  <div class="panel">
+    <h3 style="margin-bottom:.8rem">X का Y% कितना?</h3>
+    <div style="display:flex;gap:.6rem;align-items:center;flex-wrap:wrap">
+      <input type="number" id="p1-x" placeholder="X" step="any" style="flex:1;min-width:80px">
+      <span>का</span>
+      <input type="number" id="p1-y" placeholder="Y" step="any" style="flex:1;min-width:80px">
+      <span>%</span>
+      <button class="btn" id="p1-go">=</button>
+    </div>
+    <div class="result"><div class="big" id="p1-out">—</div></div>
   </div>
-</header>
-<main>
-  <div class="container narrow">
-    <div class="tool-header">
-      <h1>Percentage Calculator</h1>
-      <p>Three everyday percentage calculations — discounts, marks, growth — in one place.</p>
+  <div class="panel">
+    <h3 style="margin-bottom:.8rem">X, Y का कितना % है?</h3>
+    <div style="display:flex;gap:.6rem;align-items:center;flex-wrap:wrap">
+      <input type="number" id="p2-x" placeholder="X" step="any" style="flex:1;min-width:80px">
+      <span>,</span>
+      <input type="number" id="p2-y" placeholder="Y" step="any" style="flex:1;min-width:80px">
+      <span>का %</span>
+      <button class="btn" id="p2-go">=</button>
     </div>
-    <div class="panel">
-      <h3 style="margin-bottom:.8rem">What is X% of Y?</h3>
-      <div style="display:flex;gap:.6rem;align-items:center;flex-wrap:wrap">
-        <input type="number" id="p1-x" placeholder="X" step="any" style="flex:1;min-width:90px">
-        <span>% of</span>
-        <input type="number" id="p1-y" placeholder="Y" step="any" style="flex:1;min-width:90px">
-        <button class="btn" id="p1-go">=</button>
-      </div>
-      <div class="result"><div class="big" id="p1-out">—</div></div>
-    </div>
-    <div class="panel">
-      <h3 style="margin-bottom:.8rem">X is what % of Y?</h3>
-      <div style="display:flex;gap:.6rem;align-items:center;flex-wrap:wrap">
-        <input type="number" id="p2-x" placeholder="X" step="any" style="flex:1;min-width:90px">
-        <span>is what % of</span>
-        <input type="number" id="p2-y" placeholder="Y" step="any" style="flex:1;min-width:90px">
-        <button class="btn" id="p2-go">=</button>
-      </div>
-      <div class="result"><div class="big" id="p2-out">—</div></div>
-    </div>
-    <div class="panel">
-      <h3 style="margin-bottom:.8rem">Percentage change (old → new)</h3>
-      <div style="display:flex;gap:.6rem;align-items:center;flex-wrap:wrap">
-        <input type="number" id="p3-old" placeholder="Old value" step="any" style="flex:1;min-width:90px">
-        <span>→</span>
-        <input type="number" id="p3-new" placeholder="New value" step="any" style="flex:1;min-width:90px">
-        <button class="btn" id="p3-go">=</button>
-      </div>
-      <div class="result"><div class="big" id="p3-out">—</div></div>
-    </div>
-    <div class="ad-slot">Advertisement</div>
+    <div class="result"><div class="big" id="p2-out">—</div></div>
   </div>
-</main>
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-grid">
-      <div><h4>Toolkit</h4><a href="../about.html">About us</a><a href="../contact.html">Contact</a></div>
-      <div><h4>Tools</h4><a href="image-compressor.html">Image Compressor</a><a href="qr-generator.html">QR Code Generator</a><a href="percentage-calculator.html">Percentage Calculator</a></div>
-      <div><h4>Legal</h4><a href="../privacy.html">Privacy Policy</a><a href="../terms.html">Terms of Use</a></div>
+  <div class="panel">
+    <h3 style="margin-bottom:.8rem">बदलाव % (पुराना → नया)</h3>
+    <div style="display:flex;gap:.6rem;align-items:center;flex-wrap:wrap">
+      <input type="number" id="p3-old" placeholder="पुराना" step="any" style="flex:1;min-width:80px">
+      <span>→</span>
+      <input type="number" id="p3-new" placeholder="नया" step="any" style="flex:1;min-width:80px">
+      <button class="btn" id="p3-go">=</button>
     </div>
-    <div class="footer-bottom">© 2026 Toolkit. All rights reserved.</div>
+    <div class="result"><div class="big" id="p3-out">—</div></div>
   </div>
-</footer>
+  <div class="ad-slot">Advertisement</div>
+</div>
 <script src="../assets/tools.js"></script>
 </body>
 </html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>EMI Calculator — लोन की किस्त निकालो | Toolkit</title>
+<meta name="description" content="फ्री EMI कैलकुलेटर: होम लोन, पर्सनल लोन या कार लोन की मासिक किस्त, कुल ब्याज तुरंत जानो।">
+<meta name="theme-color" content="#6c4dff">
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+<div class="tool-top">
+  <a class="back-btn" href="../index.html">←</a>
+  <h1>🧮 EMI Calculator</h1>
+</div>
+<div class="tool-body">
+  <p style="color:var(--muted);margin-bottom:1rem">लोन की मासिक किस्त (EMI) तुरंत निकालो।</p>
+  <div class="panel">
+    <div class="field">
+      <label>लोन राशि <span class="val" id="emi-p-val">₹25,00,000</span></label>
+      <input type="range" id="emi-p" min="50000" max="20000000" step="50000" value="2500000">
+    </div>
+    <div class="field">
+      <label>ब्याज दर (सालाना %) <span class="val" id="emi-r-val">9%</span></label>
+      <input type="range" id="emi-r" min="1" max="24" step="0.1" value="9">
+    </div>
+    <div class="field">
+      <label>अवधि (साल) <span class="val" id="emi-n-val">20 साल</span></label>
+      <input type="range" id="emi-n" min="1" max="30" step="1" value="20">
+    </div>
+    <div class="result">
+      <span style="color:var(--muted);font-size:.9rem">मासिक EMI</span>
+      <div class="big" id="emi-emi">—</div>
+      <div class="kv"><span>कुल ब्याज</span><b id="emi-interest">—</b></div>
+      <div class="kv"><span>कुल भुगतान</span><b id="emi-total">—</b></div>
+    </div>
+  </div>
+  <div class="ad-slot">Advertisement</div>
+  <div class="info-card">
+    <h2>नोट</h2>
+    <p>ये अनुमान है, वित्तीय सलाह नहीं। असली दरें अपने बैंक से कन्फर्म करें।</p>
+  </div>
+</div>
+<script src="../assets/tools.js"></script>
+</body>
+</html>
