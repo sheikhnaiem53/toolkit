@@ -226,18 +226,32 @@ if ($('tts-speak')) {
     fb.queue = []; fb.playing = false;
     try { if (fb.audio) { fb.audio.pause(); fb.audio.removeAttribute('src'); fb.audio.load(); } } catch (e) {}
   };
+  const fbUrls = (text, lang) => {
+    const g = 'https://translate.google.com/translate_tts?ie=UTF-8&tl=' + lang + '&client=tw-ob&q=' + encodeURIComponent(text);
+    return [g, g]; /* do baar try: pehli baar network hiccup ho to */
+  };
   const fbPlayNext = () => {
     if (!fb.queue.length) { fb.playing = false; say(''); return; }
     fb.playing = true;
     const item = fb.queue.shift();
     const a = fb.audio || (fb.audio = new Audio());
     a.playbackRate = parseFloat(rateEl.value) || 1;
-    a.onended = fbPlayNext;
-    a.onerror = () => { fb.playing = false; say('\u26A0\uFE0F Online awaz load nahi hui \u2014 internet check karo aur dobara try karo.'); };
-    say('\uD83D\uDD0A Bol raha hai... (online awaz)');
-    a.src = 'https://translate.google.com/translate_tts?ie=UTF-8&tl=' + item.lang + '&client=tw-ob&q=' + encodeURIComponent(item.text);
-    const pr = a.play();
-    if (pr && pr.catch) pr.catch(() => say('\u26A0\uFE0F Audio chalane me dikkat \u2014 dobara try karo.'));
+    const urls = fbUrls(item.text, item.lang);
+    let ui = 0, settled = false;
+    const done = msg => { if (!settled) { settled = true; fb.playing = false; say(msg); } };
+    const tryUrl = () => {
+      if (ui >= urls.length) { done('\u26A0\uFE0F Awaz load nahi hui \u2014 internet check karo, ya Chrome browser me kholo.'); return; }
+      say('\uD83D\uDD0A Awaz load ho rahi hai...');
+      try { a.pause(); } catch (e) {}
+      a.src = urls[ui++];
+      try { a.load(); } catch (e) {}
+      const pr = a.play();
+      if (pr && pr.catch) pr.catch(() => { /* load error -> onerror bhi fire hoga */ });
+    };
+    a.onended = () => { settled = true; fbPlayNext(); };
+    a.onplaying = () => { settled = true; say('\uD83D\uDD0A Bol raha hai... (online awaz)'); };
+    a.onerror = () => { settled = false; tryUrl(); };
+    tryUrl();
   };
   const fbSpeak = text => {
     fbStop();
