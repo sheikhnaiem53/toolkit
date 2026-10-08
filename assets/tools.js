@@ -112,6 +112,55 @@ if ($('age-go')) {
   });
 }
 
+/* ---------- GST Calculator ---------- */
+if ($('gst-amt')) {
+  const calcGST = () => {
+    const amt = parseFloat($('gst-amt').value);
+    const rate = parseFloat($('gst-rate').value);
+    const mode = document.querySelector('input[name=gst-mode]:checked').value;
+    const f = n => '₹' + n.toLocaleString('en-IN', { maximumFractionDigits: 2 });
+    if (isNaN(amt)) { $('gst-base').textContent = $('gst-tax').textContent = $('gst-total').textContent = '—'; return; }
+    let base, tax, total;
+    if (mode === 'add') { base = amt; tax = amt * rate / 100; total = amt + tax; }
+    else { total = amt; base = amt * 100 / (100 + rate); tax = amt - base; }
+    $('gst-base').textContent = f(base);
+    $('gst-tax').textContent = f(tax);
+    $('gst-total').textContent = f(total);
+  };
+  ['gst-amt', 'gst-rate'].forEach(id => $(id).addEventListener('input', calcGST));
+  document.querySelectorAll('input[name=gst-mode]').forEach(r => r.addEventListener('change', calcGST));
+}
+
+/* ---------- BMI Calculator ---------- */
+if ($('bmi-go')) {
+  $('bmi-go').addEventListener('click', () => {
+    const h = parseFloat($('bmi-h').value), w = parseFloat($('bmi-w').value);
+    if (!h || !w || h <= 0 || w <= 0) { alert('Please enter valid height and weight.'); return; }
+    const bmi = w / Math.pow(h / 100, 2);
+    $('bmi-val').textContent = bmi.toFixed(1);
+    $('bmi-cat').textContent = bmi < 18.5 ? 'Underweight' : bmi < 25 ? 'Normal' : bmi < 30 ? 'Overweight' : 'Obese';
+    $('bmi-range').textContent = (18.5 * Math.pow(h / 100, 2)).toFixed(1) + ' – ' + (24.9 * Math.pow(h / 100, 2)).toFixed(1) + ' kg';
+    $('bmi-result').hidden = false;
+  });
+}
+
+/* ---------- Percentage Calculator ---------- */
+if ($('p1-go')) {
+  $('p1-go').onclick = () => {
+    const x = parseFloat($('p1-x').value), y = parseFloat($('p1-y').value);
+    $('p1-out').textContent = (!isNaN(x) && !isNaN(y)) ? (+(x * y / 100).toFixed(4)).toLocaleString('en-US') : '—';
+  };
+  $('p2-go').onclick = () => {
+    const x = parseFloat($('p2-x').value), y = parseFloat($('p2-y').value);
+    $('p2-out').textContent = (!isNaN(x) && !isNaN(y) && y !== 0) ? (+(x / y * 100).toFixed(2)).toLocaleString('en-US') + '%' : '—';
+  };
+  $('p3-go').onclick = () => {
+    const o = parseFloat($('p3-old').value), n = parseFloat($('p3-new').value);
+    if (isNaN(o) || isNaN(n) || o === 0) { $('p3-out').textContent = '—'; return; }
+    const d = (n - o) / o * 100;
+    $('p3-out').textContent = (d >= 0 ? '+' : '') + (+d.toFixed(2)).toLocaleString('en-US') + '% ' + (d >= 0 ? 'increase' : 'decrease');
+  };
+}
 /* ---------- Unit Converter ---------- */
 if ($('uc-cat')) {
   const UNITS = {

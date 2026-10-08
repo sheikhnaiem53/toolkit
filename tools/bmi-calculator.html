@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BMI Calculator — Body Mass Index Online Free | Toolkit</title>
+<meta name="description" content="Free BMI calculator: enter height and weight to get your Body Mass Index and health category instantly.">
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="../index.html">Toolkit<span>.free</span></a>
+    <nav class="main-nav"><a href="../index.html">Home</a><a href="../about.html">About</a><a href="../contact.html">Contact</a></nav>
+  </div>
+</header>
+<main>
+  <div class="container narrow">
+    <div class="tool-header">
+      <h1>BMI Calculator</h1>
+      <p>Enter your height and weight to find your Body Mass Index and category.</p>
+    </div>
+    <div class="panel">
+      <div class="field">
+        <label for="bmi-h">Height (cm)</label>
+        <input type="number" id="bmi-h" placeholder="e.g. 170" step="any">
+      </div>
+      <div class="field">
+        <label for="bmi-w">Weight (kg)</label>
+        <input type="number" id="bmi-w" placeholder="e.g. 65" step="any">
+      </div>
+      <button class="btn" id="bmi-go">Calculate BMI</button>
+      <div id="bmi-result" class="result" hidden>
+        <span style="color:var(--muted);font-size:.9rem">Your BMI</span>
+        <div class="big" id="bmi-val">—</div>
+        <div class="kv"><span>Category</span><b id="bmi-cat">—</b></div>
+        <div class="kv"><span>Healthy range for your height</span><b id="bmi-range">—</b></div>
+      </div>
+    </div>
+    <div class="ad-slot">Advertisement</div>
+    <section class="prose">
+      <h2>BMI categories (WHO)</h2>
+      <ul>
+        <li>Below 18.5 — Underweight</li>
+        <li>18.5 to 24.9 — Normal</li>
+        <li>25 to 29.9 — Overweight</li>
+        <li>30 and above — Obese</li>
+      </ul>
+      <p><em>Note:</em> BMI is a screening measure, not a diagnosis. Athletes and others with high muscle mass should consult a doctor for proper assessment.</p>
+    </section>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div><h4>Toolkit</h4><a href="../about.html">About us</a><a href="../contact.html">Contact</a></div>
+      <div><h4>Tools</h4><a href="image-compressor.html">Image Compressor</a><a href="qr-generator.html">QR Code Generator</a><a href="bmi-calculator.html">BMI Calculator</a></div>
+      <div><h4>Legal</h4><a href="../privacy.html">Privacy Policy</a><a href="../terms.html">Terms of Use</a></div>
+    </div>
+    <div class="footer-bottom">© 2026 Toolkit. All rights reserved.</div>
+  </div>
+</footer>
+<script src="../assets/tools.js"></script>
+</body>
+</html>
