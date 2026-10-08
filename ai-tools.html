@@ -102,12 +102,11 @@ function renderCats(){
   let h='<button class="cat-btn'+(curCat==='all'?' on':'')+'" data-c="all">🌟 '+T('dir_all')+'</button>';
   for(const k in AI_CATS)h+='<button class="cat-btn'+(curCat===k?' on':'')+'" data-c="'+k+'">'+catName(k)+'</button>';
   catRow.innerHTML=h;
-  catRow.querySelectorAll('.cat-btn').forEach(b=>b.onclick=()=>{curCat=b.dataset.c;function onLangChange(){renderCats();render();}
-renderCats();render();});
+  catRow.querySelectorAll('.cat-btn').forEach(b=>{b.onclick=()=>{curCat=b.getAttribute('data-c');renderCats();render();};});
 }
 const PAGE=90;let curList=[],shown=0;
 const moreBtn=document.getElementById('moreBtn');
-function card(t){return '<div class="tcard"><span class="tag '+t.t+'">'+tagHi[t.t]+'</span><b>'+t.n+'</b><p>'+t.d+'</p><a class="go" href="'+t.u+'" target="_blank" rel="noopener">खोलो ↗</a></div>';}
+function card(t){return '<div class="tcard"><span class="tag '+t.t+'">'+tagL()[t.t]+'</span><b>'+t.n+'</b><p>'+t.d+'</p><a class="go" href="'+t.u+'" target="_blank" rel="noopener">'+T('open')+'</a></div>';}
 function appendBatch(){
   const next=curList.slice(shown,shown+PAGE);
   grid.insertAdjacentHTML('beforeend',next.map(card).join(''));
