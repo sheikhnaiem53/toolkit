@@ -200,33 +200,55 @@ if ($('uc-cat')) {
   fillUnits();
 }
 
-/* ---------- Text to Speech ---------- */
+/* ---------- Text to Speech (mobile-hardened) ---------- */
 if ($('tts-speak')) {
   const synth = window.speechSynthesis;
-  const fillVoices = () => {
-    const voices = synth.getVoices();
-    const sel = $('tts-voice');
-    sel.innerHTML = '';
-    voices.forEach((v, i) => {
-      const o = document.createElement('option');
-      o.value = i; o.textContent = v.name + ' (' + v.lang + ')';
-      if (v.lang.startsWith('hi')) o.selected = true;
-      sel.appendChild(o);
+  const statusEl = $('tts-status');
+  const say = msg => { if (statusEl) statusEl.textContent = msg; };
+  if (!synth) {
+    say('⚠️ Maaf karo — aapka browser Text-to-Speech support nahi karta. Chrome ya Edge try karo.');
+    $('tts-speak').disabled = true;
+  } else {
+    const fillVoices = () => {
+      const voices = synth.getVoices();
+      const sel = $('tts-voice');
+      const prev = sel.value;
+      sel.innerHTML = '';
+      let hiIdx = -1;
+      voices.forEach((v, i) => {
+        const o = document.createElement('option');
+        o.value = i; o.textContent = v.name + ' (' + v.lang + ')';
+        if (hiIdx < 0 && v.lang.toLowerCase().startsWith('hi')) hiIdx = i;
+        sel.appendChild(o);
+      });
+      if (voices.length) sel.selectedIndex = (prev !== '' && +prev < voices.length) ? +prev : (hiIdx >= 0 ? hiIdx : 0);
+    };
+    fillVoices();
+    try { synth.onvoiceschanged = fillVoices; } catch (e) {}
+    // kuch browsers me voices pehle gesture ke baad load hoti hain
+    document.addEventListener('pointerdown', function once() { fillVoices(); document.removeEventListener('pointerdown', once); });
+    $('tts-rate').addEventListener('input', e => $('tts-rate-val').textContent = e.target.value + 'x');
+    $('tts-speak').addEventListener('click', () => {
+      const text = $('tts-text').value.trim();
+      if (!text) { say('Pehle kuch text likho!'); return; }
+      try {
+        synth.cancel();
+        if (synth.paused) synth.resume();
+        const u = new SpeechSynthesisUtterance(text);
+        const voices = synth.getVoices();
+        const vi = parseInt($('tts-voice').value, 10);
+        if (voices[vi]) { u.voice = voices[vi]; u.lang = voices[vi].lang; }
+        else { u.lang = 'hi-IN'; }
+        u.rate = parseFloat($('tts-rate').value) || 1;
+        u.onend = () => say('');
+        u.onerror = () => say('⚠️ Awaz chalane me dikkat aayi — dusri awaz chun kar try karo.');
+        window._ttsU = u; // Chrome GC bug fix: reference rakho
+        say('🔊 Bol raha hai...');
+        setTimeout(() => synth.speak(u), 60); // cancel() ke baad ka Chrome race fix
+      } catch (err) { say('⚠️ Error: ' + err.message); }
     });
-    if (!sel.value && voices.length) sel.selectedIndex = 0;
-  };
-  fillVoices();
-  if (synth.onvoiceschanged !== undefined) synth.onvoiceschanged = fillVoices;
-  $('tts-rate').addEventListener('input', e => $('tts-rate-val').textContent = e.target.value + 'x');
-  $('tts-speak').addEventListener('click', () => {
-    synth.cancel();
-    const u = new SpeechSynthesisUtterance($('tts-text').value);
-    const voices = synth.getVoices();
-    if (voices[$('tts-voice').value]) u.voice = voices[$('tts-voice').value];
-    u.rate = parseFloat($('tts-rate').value);
-    synth.speak(u);
-  });
-  $('tts-stop').addEventListener('click', () => synth.cancel());
+    $('tts-stop').addEventListener('click', () => { try { synth.cancel(); } catch (e) {} say(''); });
+  }
 }
 
 /* ---------- Color Picker ---------- */
