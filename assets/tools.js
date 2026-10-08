@@ -200,52 +200,99 @@ if ($('uc-cat')) {
   fillUnits();
 }
 
-/* ---------- Text to Speech (mobile-hardened) ---------- */
+/* ---------- Text to Speech (native + online fallback) ---------- */
 if ($('tts-speak')) {
-  const synth = window.speechSynthesis;
   const statusEl = $('tts-status');
   const say = msg => { if (statusEl) statusEl.textContent = msg; };
-  if (!synth) {
-    say('⚠️ Maaf karo — aapka browser Text-to-Speech support nahi karta. Chrome ya Edge try karo.');
-    $('tts-speak').disabled = true;
+  const hasNative = ('speechSynthesis' in window) && !!window.speechSynthesis;
+  const rateEl = $('tts-rate'), rateVal = $('tts-rate-val'), textEl = $('tts-text'), voiceSel = $('tts-voice');
+  rateEl.addEventListener('input', e => rateVal.textContent = e.target.value + 'x');
+
+  /* ---- Online fallback: Google TTS audio (har browser me chalta hai) ---- */
+  const fb = { audio: null, queue: [], playing: false };
+  const hasHindi = t => /[\u0900-\u097F]/.test(t);
+  const chunkText = t => {
+    const parts = t.match(/[^\u0964.!?\n]+[\u0964.!?\n]?/g) || [t];
+    const out = [];
+    for (const p of parts) {
+      const s2 = p.trim();
+      if (!s2) continue;
+      if (s2.length <= 180) out.push(s2);
+      else for (let i = 0; i < s2.length; i += 180) out.push(s2.slice(i, i + 180));
+    }
+    return out.slice(0, 20);
+  };
+  const fbStop = () => {
+    fb.queue = []; fb.playing = false;
+    try { if (fb.audio) { fb.audio.pause(); fb.audio.removeAttribute('src'); fb.audio.load(); } } catch (e) {}
+  };
+  const fbPlayNext = () => {
+    if (!fb.queue.length) { fb.playing = false; say(''); return; }
+    fb.playing = true;
+    const item = fb.queue.shift();
+    const a = fb.audio || (fb.audio = new Audio());
+    a.playbackRate = parseFloat(rateEl.value) || 1;
+    a.onended = fbPlayNext;
+    a.onerror = () => { fb.playing = false; say('\u26A0\uFE0F Online awaz load nahi hui \u2014 internet check karo aur dobara try karo.'); };
+    say('\uD83D\uDD0A Bol raha hai... (online awaz)');
+    a.src = 'https://translate.google.com/translate_tts?ie=UTF-8&tl=' + item.lang + '&client=tw-ob&q=' + encodeURIComponent(item.text);
+    const pr = a.play();
+    if (pr && pr.catch) pr.catch(() => say('\u26A0\uFE0F Audio chalane me dikkat \u2014 dobara try karo.'));
+  };
+  const fbSpeak = text => {
+    fbStop();
+    const lang = hasHindi(text) ? 'hi' : 'en';
+    fb.queue = chunkText(text).map(t => ({ text: t, lang }));
+    if (!fb.queue.length) { say('Pehle kuch text likho!'); return; }
+    fbPlayNext();
+  };
+
+  if (!hasNative) {
+    /* Is browser me built-in TTS nahi — online fallback */
+    if (voiceSel) { voiceSel.innerHTML = '<option>Online awaz (auto)</option>'; voiceSel.disabled = true; }
+    say('\u2139\uFE0F Is browser me built-in awaz nahi hai \u2014 online awaz use hogi (internet chahiye).');
+    $('tts-speak').addEventListener('click', () => {
+      const text = textEl.value.trim();
+      if (!text) { say('Pehle kuch text likho!'); return; }
+      fbSpeak(text);
+    });
+    $('tts-stop').addEventListener('click', () => { fbStop(); say(''); });
   } else {
+    const synth = window.speechSynthesis;
     const fillVoices = () => {
       const voices = synth.getVoices();
-      const sel = $('tts-voice');
-      const prev = sel.value;
-      sel.innerHTML = '';
+      const prev = voiceSel.value;
+      voiceSel.innerHTML = '';
       let hiIdx = -1;
       voices.forEach((v, i) => {
         const o = document.createElement('option');
         o.value = i; o.textContent = v.name + ' (' + v.lang + ')';
         if (hiIdx < 0 && v.lang.toLowerCase().startsWith('hi')) hiIdx = i;
-        sel.appendChild(o);
+        voiceSel.appendChild(o);
       });
-      if (voices.length) sel.selectedIndex = (prev !== '' && +prev < voices.length) ? +prev : (hiIdx >= 0 ? hiIdx : 0);
+      if (voices.length) voiceSel.selectedIndex = (prev !== '' && +prev < voices.length) ? +prev : (hiIdx >= 0 ? hiIdx : 0);
     };
     fillVoices();
     try { synth.onvoiceschanged = fillVoices; } catch (e) {}
-    // kuch browsers me voices pehle gesture ke baad load hoti hain
     document.addEventListener('pointerdown', function once() { fillVoices(); document.removeEventListener('pointerdown', once); });
-    $('tts-rate').addEventListener('input', e => $('tts-rate-val').textContent = e.target.value + 'x');
     $('tts-speak').addEventListener('click', () => {
-      const text = $('tts-text').value.trim();
+      const text = textEl.value.trim();
       if (!text) { say('Pehle kuch text likho!'); return; }
       try {
         synth.cancel();
         if (synth.paused) synth.resume();
         const u = new SpeechSynthesisUtterance(text);
         const voices = synth.getVoices();
-        const vi = parseInt($('tts-voice').value, 10);
+        const vi = parseInt(voiceSel.value, 10);
         if (voices[vi]) { u.voice = voices[vi]; u.lang = voices[vi].lang; }
         else { u.lang = 'hi-IN'; }
-        u.rate = parseFloat($('tts-rate').value) || 1;
+        u.rate = parseFloat(rateEl.value) || 1;
         u.onend = () => say('');
-        u.onerror = () => say('⚠️ Awaz chalane me dikkat aayi — dusri awaz chun kar try karo.');
-        window._ttsU = u; // Chrome GC bug fix: reference rakho
-        say('🔊 Bol raha hai...');
-        setTimeout(() => synth.speak(u), 60); // cancel() ke baad ka Chrome race fix
-      } catch (err) { say('⚠️ Error: ' + err.message); }
+        u.onerror = () => say('\u26A0\uFE0F Awaz chalane me dikkat aayi \u2014 dusri awaz chun kar try karo.');
+        window._ttsU = u;
+        say('\uD83D\uDD0A Bol raha hai...');
+        setTimeout(() => synth.speak(u), 60);
+      } catch (err) { say('\u26A0\uFE0F Error: ' + err.message); }
     });
     $('tts-stop').addEventListener('click', () => { try { synth.cancel(); } catch (e) {} say(''); });
   }
