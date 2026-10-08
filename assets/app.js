@@ -4,6 +4,8 @@ const TOOLS = [
   { id: 'ai-image',            name: 'AI Image Generator',   icon: '✨', bg: '#fae8ff', file: 'tools/ai-image.html',             popular: true, ai: true },
   { id: 'ai-writer',           name: 'AI Writer',            icon: '✍️', bg: '#e0e7ff', file: 'tools/ai-writer.html',          ai: true },
   { id: 'hashtag-generator',   name: 'Hashtag Generator',    icon: '#️⃣', bg: '#ffedd5', file: 'tools/hashtag-generator.html',  ai: true },
+  { id: 'ai-tools-dir',         name: '500+ AI Tools',        icon: '🌐', bg: '#fef3c7', file: 'ai-tools.html',                 popular: true, ai: true },
+  { id: 'free-apis-dir',        name: '50+ Free APIs',        icon: '🔌', bg: '#e0e7ff', file: 'free-apis.html',                popular: true, ai: true },
   { id: 'word-counter',         name: 'Word Counter',         icon: '📝', bg: '#ede9fe', file: 'tools/word-counter.html',         popular: true },
   { id: 'text-to-speech',       name: 'Text to Speech',       icon: '🔊', bg: '#e0f2fe', file: 'tools/text-to-speech.html',       popular: true },
   { id: 'emi-calculator',       name: 'EMI Calculator',       icon: '🧮', bg: '#dcfce7', file: 'tools/emi-calculator.html',       popular: true },

@@ -3,110 +3,95 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Free APIs — डेवलपर्स के लिए मुफ्त APIs | Toolkit</title>
-<meta name="description" content="बिना API key के फ्री APIs की लिस्ट: AI, मौसम, जोक्स, URL shortener और बहुत कुछ — डेवलपर्स के लिए।">
-<meta name="theme-color" content="#6c4dff">
+<title>Free APIs — Toolkit</title>
+<meta name="description" content="50+ free APIs: AI APIs (Gemini, Groq, DeepSeek, Hugging Face) aur no-key free APIs — developers ke liye.">
 <link rel="stylesheet" href="assets/styles.css">
 <style>
-.api-card { background:#fff; border-radius:20px; padding:1.2rem; margin:0 1.2rem 1rem; box-shadow:0 3px 12px rgba(27,27,47,.06); }
-.api-card h3 { font-size:1.05rem; display:flex; align-items:center; gap:.5rem; flex-wrap:wrap; }
-.badge { font-size:.72rem; font-weight:800; padding:.2rem .6rem; border-radius:999px; }
-.badge.free { background:#dcfce7; color:#166534; }
-.badge.key { background:#fef9c3; color:#854d0e; }
-.api-card p { color:#4a4a63; font-size:.9rem; margin:.5rem 0 .8rem; }
-.api-card code { display:block; background:#f4f2fa; border-radius:10px; padding:.6rem .8rem; font-size:.78rem; overflow-x:auto; white-space:nowrap; margin-bottom:.8rem; }
-.api-links { display:flex; gap:.6rem; }
-.api-links a { font-size:.88rem; font-weight:700; color:var(--brand); text-decoration:none; }
-.cat-title { padding:1.2rem 1.3rem .6rem; font-size:1.15rem; }
+.api-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:10px}
+.api-card{background:#fff;border:1px solid #eee;border-radius:12px;padding:12px;font-size:13px}
+.api-card b{display:block;font-size:14px;margin-bottom:4px}
+.api-card p{color:#666;margin:4px 0 8px;line-height:1.4}
+.api-card a{color:#7c3aed;font-weight:600;font-size:13px}
+.key{display:inline-block;font-size:11px;padding:2px 8px;border-radius:20px;margin-bottom:6px}
+.nokey{background:#dcfce7;color:#166534}.needkey{background:#fef3c7;color:#92400e}
+.sec-title{margin:22px 0 4px}
 </style>
 </head>
 <body>
-<div class="tool-top">
-  <a class="back-btn" href="index.html">←</a>
-  <h1>🔌 Free APIs</h1>
-</div>
-<p style="color:var(--muted);padding:0 1.2rem 1rem">डेवलपर्स के लिए — बिना पैसे, बिना API key (जहाँ लिखा है) इस्तेमाल करो।</p>
+<div class="app">
+<header class="topbar"><a class="back" href="index.html">‹</a><h1>🔌 Free APIs</h1></header>
+<main class="page">
+<div class="ad-slot">AdSense — In-article Ad</div>
 
-<h2 class="cat-title">🤖 AI APIs</h2>
-<div class="api-card">
-  <h3>Pollinations Text <span class="badge free">NO KEY</span></h3>
-  <p>फ्री AI टेक्स्ट जनरेशन — चैट, लेख, शायरी। GET request से सीधा जवाब।</p>
-  <code>https://text.pollinations.ai/आपका-सवाल</code>
-  <div class="api-links"><a href="https://github.com/pollinations-ai/pollinations" target="_blank" rel="noopener">📄 Docs →</a></div>
-</div>
-<div class="api-card">
-  <h3>Pollinations Image <span class="badge free">NO KEY</span></h3>
-  <p>फ्री AI इमेज जनरेशन — prompt से फोटो। URL ही image है।</p>
-  <code>https://image.pollinations.ai/prompt/a-cat-in-garden</code>
-  <div class="api-links"><a href="https://github.com/pollinations-ai/pollinations" target="_blank" rel="noopener">📄 Docs →</a></div>
-</div>
+<p class="muted">Developers ke liye <b>50+ free APIs</b> — AI wali aur bina-key wali. 🔑 = free signup key chahiye, 🆓 = bilkul bina key ke chalti hai.</p>
 
-<h2 class="cat-title">🌤️ Data APIs</h2>
-<div class="api-card">
-  <h3>Open-Meteo Weather <span class="badge free">NO KEY</span></h3>
-  <p>फ्री मौसम API — किसी भी शहर का live weather।</p>
-  <code>https://api.open-meteo.com/v1/forecast?latitude=28.6&amp;longitude=77.2&amp;current_weather=true</code>
-  <div class="api-links"><a href="https://open-meteo.com/en/docs" target="_blank" rel="noopener">📄 Docs →</a></div>
-</div>
-<div class="api-card">
-  <h3>Dictionary API <span class="badge free">NO KEY</span></h3>
-  <p>English शब्दों के अर्थ, उच्चारण, उदाहरण।</p>
-  <code>https://api.dictionaryapi.dev/api/v2/entries/en/hello</code>
-  <div class="api-links"><a href="https://dictionaryapi.dev/" target="_blank" rel="noopener">📄 Docs →</a></div>
-</div>
-<div class="api-card">
-  <h3>GitHub API <span class="badge free">NO KEY*</span></h3>
-  <p>Public repos, users, commits का डेटा। *बिना key: 60 req/hour।</p>
-  <code>https://api.github.com/users/octocat</code>
-  <div class="api-links"><a href="https://docs.github.com/en/rest" target="_blank" rel="noopener">📄 Docs →</a></div>
-</div>
-<div class="api-card">
-  <h3>JSONPlaceholder <span class="badge free">NO KEY</span></h3>
-  <p>Testing के लिए फ्री fake REST API — posts, users, todos।</p>
-  <code>https://jsonplaceholder.typicode.com/posts/1</code>
-  <div class="api-links"><a href="https://jsonplaceholder.typicode.com/" target="_blank" rel="noopener">📄 Docs →</a></div>
+<h3 class="sec-title">🤖 AI APIs (Free Tier)</h3>
+<div class="api-grid">
+<div class="api-card"><span class="key needkey">🔑 free tier</span><b>Google Gemini</b><p>Best free LLM API — 1.5 Flash free</p><a href="https://ai.google.dev" target="_blank" rel="noopener">ai.google.dev ↗</a></div>
+<div class="api-card"><span class="key needkey">🔑 free tier</span><b>Groq</b><p>Superfast Llama inference, free tier</p><a href="https://groq.com" target="_blank" rel="noopener">groq.com ↗</a></div>
+<div class="api-card"><span class="key needkey">🔑 sasta</span><b>DeepSeek</b><p>Sabse sasta powerful LLM API</p><a href="https://platform.deepseek.com" target="_blank" rel="noopener">platform.deepseek.com ↗</a></div>
+<div class="api-card"><span class="key needkey">🔑 free models</span><b>OpenRouter</b><p>100+ models, kuch free</p><a href="https://openrouter.ai" target="_blank" rel="noopener">openrouter.ai ↗</a></div>
+<div class="api-card"><span class="key needkey">🔑 free credits</span><b>Together AI</b><p>Open-source models API</p><a href="https://www.together.ai" target="_blank" rel="noopener">together.ai ↗</a></div>
+<div class="api-card"><span class="key needkey">🔑 free tier</span><b>Hugging Face</b><p>1000+ models inference API</p><a href="https://huggingface.co" target="_blank" rel="noopener">huggingface.co ↗</a></div>
+<div class="api-card"><span class="key needkey">🔑 free tier</span><b>Mistral AI</b><p>La Plateforme — free tier</p><a href="https://console.mistral.ai" target="_blank" rel="noopener">console.mistral.ai ↗</a></div>
+<div class="api-card"><span class="key needkey">🔑 trial</span><b>Cohere</b><p>Embed + chat API trial</p><a href="https://cohere.com" target="_blank" rel="noopener">cohere.com ↗</a></div>
+<div class="api-card"><span class="key nokey">🆓 no key</span><b>Pollinations Text</b><p>Free LLM API, no signup</p><a href="https://text.pollinations.ai" target="_blank" rel="noopener">text.pollinations.ai ↗</a></div>
+<div class="api-card"><span class="key nokey">🆓 no key</span><b>Pollinations Image</b><p>Free image gen API</p><a href="https://image.pollinations.ai" target="_blank" rel="noopener">image.pollinations.ai ↗</a></div>
+<div class="api-card"><span class="key needkey">🔑 free tier</span><b>ElevenLabs</b><p>Voice AI — 10k chars free</p><a href="https://elevenlabs.io" target="_blank" rel="noopener">elevenlabs.io ↗</a></div>
+<div class="api-card"><span class="key needkey">🔑 free tier</span><b>AssemblyAI</b><p>Speech-to-text free tier</p><a href="https://www.assemblyai.com" target="_blank" rel="noopener">assemblyai.com ↗</a></div>
+<div class="api-card"><span class="key needkey">🔑 free credits</span><b>Deepgram</b><p>Fast STT — free credits</p><a href="https://deepgram.com" target="_blank" rel="noopener">deepgram.com ↗</a></div>
+<div class="api-card"><span class="key needkey">🔑 free tier</span><b>Clarifai</b><p>Image recognition free tier</p><a href="https://www.clarifai.com" target="_blank" rel="noopener">clarifai.com ↗</a></div>
+<div class="api-card"><span class="key needkey">🔑 free tier</span><b>Imagga</b><p>Image tagging/categorization</p><a href="https://imagga.com" target="_blank" rel="noopener">imagga.com ↗</a></div>
+<div class="api-card"><span class="key nokey">🆓 no key</span><b>OCR.space</b><p>Free OCR API (helloworld key)</p><a href="https://ocr.space" target="_blank" rel="noopener">ocr.space ↗</a></div>
+<div class="api-card"><span class="key needkey">🔑 free tier</span><b>Replicate</b><p>ML models pay-per-use</p><a href="https://replicate.com" target="_blank" rel="noopener">replicate.com ↗</a></div>
+<div class="api-card"><span class="key needkey">🔑 free tier</span><b>Stability AI</b><p>Stable Diffusion API</p><a href="https://platform.stability.ai" target="_blank" rel="noopener">platform.stability.ai ↗</a></div>
 </div>
 
-<h2 class="cat-title">😄 Fun APIs</h2>
-<div class="api-card">
-  <h3>JokeAPI <span class="badge free">NO KEY</span></h3>
-  <p>प्रोग्रामिंग और जनरल जोक्स — safe-mode के साथ।</p>
-  <code>https://v2.jokeapi.dev/joke/Any?safe-mode&amp;type=single</code>
-  <div class="api-links"><a href="https://jokeapi.dev/" target="_blank" rel="noopener">📄 Docs →</a></div>
-</div>
-<div class="api-card">
-  <h3>Advice Slip <span class="badge free">NO KEY</span></h3>
-  <p>Random सलाह — एक लाइन की wisdom।</p>
-  <code>https://api.adviceslip.com/advice</code>
-  <div class="api-links"><a href="https://api.adviceslip.com/" target="_blank" rel="noopener">📄 Docs →</a></div>
-</div>
-<div class="api-card">
-  <h3>Cat Facts <span class="badge free">NO KEY</span></h3>
-  <p>बिल्लियों के मज़ेदार facts।</p>
-  <code>https://catfact.ninja/fact</code>
-  <div class="api-links"><a href="https://catfact.ninja/" target="_blank" rel="noopener">📄 Docs →</a></div>
+<h3 class="sec-title">🆓 No-Key Free APIs (turant use karo)</h3>
+<div class="api-grid">
+<div class="api-card"><span class="key nokey">🆓</span><b>Open-Meteo</b><p>Mausam — no key</p><a href="https://open-meteo.com" target="_blank" rel="noopener">Docs ↗</a></div>
+<div class="api-card"><span class="key nokey">🆓</span><b>is.gd</b><p>URL shortener API</p><a href="https://is.gd/apishorteningreference.php" target="_blank" rel="noopener">Docs ↗</a></div>
+<div class="api-card"><span class="key nokey">🆓</span><b>JokeAPI</b><p>Programming jokes</p><a href="https://sv443.net/jokeapi/v2" target="_blank" rel="noopener">Docs ↗</a></div>
+<div class="api-card"><span class="key nokey">🆓</span><b>Advice Slip</b><p>Random advice</p><a href="https://api.adviceslip.com" target="_blank" rel="noopener">Docs ↗</a></div>
+<div class="api-card"><span class="key nokey">🆓</span><b>Cat Facts</b><p>Billi facts</p><a href="https://catfact.ninja" target="_blank" rel="noopener">Docs ↗</a></div>
+<div class="api-card"><span class="key nokey">🆓</span><b>Dictionary</b><p>English word meanings</p><a href="https://dictionaryapi.dev" target="_blank" rel="noopener">Docs ↗</a></div>
+<div class="api-card"><span class="key nokey">🆓</span><b>GitHub</b><p>Repos, users data</p><a href="https://docs.github.com/en/rest" target="_blank" rel="noopener">Docs ↗</a></div>
+<div class="api-card"><span class="key nokey">🆓</span><b>JSONPlaceholder</b><p>Fake REST API testing</p><a href="https://jsonplaceholder.typicode.com" target="_blank" rel="noopener">Docs ↗</a></div>
+<div class="api-card"><span class="key nokey">🆓</span><b>Dog CEO</b><p>Random dog images</p><a href="https://dog.ceo/dog-api" target="_blank" rel="noopener">Docs ↗</a></div>
+<div class="api-card"><span class="key nokey">🆓</span><b>PokeAPI</b><p>Pokemon data</p><a href="https://pokeapi.co" target="_blank" rel="noopener">Docs ↗</a></div>
+<div class="api-card"><span class="key nokey">🆓</span><b>REST Countries</b><p>Deshon ki jaankari</p><a href="https://restcountries.com" target="_blank" rel="noopener">Docs ↗</a></div>
+<div class="api-card"><span class="key nokey">🆓</span><b>Open Library</b><p>Kitabon ka data</p><a href="https://openlibrary.org/developers/api" target="_blank" rel="noopener">Docs ↗</a></div>
+<div class="api-card"><span class="key nokey">🆓</span><b>DummyJSON</b><p>Fake products/users</p><a href="https://dummyjson.com" target="_blank" rel="noopener">Docs ↗</a></div>
+<div class="api-card"><span class="key nokey">🆓</span><b>CoinGecko</b><p>Crypto prices</p><a href="https://www.coingecko.com/en/api" target="_blank" rel="noopener">Docs ↗</a></div>
+<div class="api-card"><span class="key nokey">🆓</span><b>ExchangeRate</b><p>Currency rates</p><a href="https://www.exchangerate-api.com" target="_blank" rel="noopener">Docs ↗</a></div>
+<div class="api-card"><span class="key nokey">🆓</span><b>IP-API</b><p>IP geolocation</p><a href="https://ip-api.com/docs" target="_blank" rel="noopener">Docs ↗</a></div>
+<div class="api-card"><span class="key nokey">🆓</span><b>ipify</b><p>Apna IP pata karo</p><a href="https://www.ipify.org" target="_blank" rel="noopener">Docs ↗</a></div>
+<div class="api-card"><span class="key nokey">🆓</span><b>RandomUser</b><p>Fake user profiles</p><a href="https://randomuser.me" target="_blank" rel="noopener">Docs ↗</a></div>
+<div class="api-card"><span class="key nokey">🆓</span><b>WorldTimeAPI</b><p>Duniya ka time</p><a href="https://worldtimeapi.org" target="_blank" rel="noopener">Docs ↗</a></div>
+<div class="api-card"><span class="key nokey">🆓</span><b>Sunrise-Sunset</b><p>Suraj ugne/doobne ka time</p><a href="https://sunrise-sunset.org/api" target="_blank" rel="noopener">Docs ↗</a></div>
+<div class="api-card"><span class="key nokey">🆓</span><b>Agify</b><p>Naam se umar guess</p><a href="https://agify.io" target="_blank" rel="noopener">Docs ↗</a></div>
+<div class="api-card"><span class="key nokey">🆓</span><b>Genderize</b><p>Naam se gender guess</p><a href="https://genderize.io" target="_blank" rel="noopener">Docs ↗</a></div>
+<div class="api-card"><span class="key nokey">🆓</span><b>Nationalize</b><p>Naam se desh guess</p><a href="https://nationalize.io" target="_blank" rel="noopener">Docs ↗</a></div>
+<div class="api-card"><span class="key nokey">🆓</span><b>Numbers API</b><p>Number trivia/facts</p><a href="http://numbersapi.com" target="_blank" rel="noopener">Docs ↗</a></div>
+<div class="api-card"><span class="key nokey">🆓</span><b>CocktailDB</b><p>Drinks recipes</p><a href="https://www.thecocktaildb.com/api.php" target="_blank" rel="noopener">Docs ↗</a></div>
+<div class="api-card"><span class="key nokey">🆓</span><b>MealDB</b><p>Khane ki recipes</p><a href="https://www.themealdb.com/api.php" target="_blank" rel="noopener">Docs ↗</a></div>
+<div class="api-card"><span class="key nokey">🆓</span><b>OpenFoodFacts</b><p>Food products data</p><a href="https://world.openfoodfacts.org/data" target="_blank" rel="noopener">Docs ↗</a></div>
+<div class="api-card"><span class="key nokey">🆓</span><b>TVMaze</b><p>TV shows data</p><a href="https://www.tvmaze.com/api" target="_blank" rel="noopener">Docs ↗</a></div>
+<div class="api-card"><span class="key nokey">🆓</span><b>Jikan</b><p>Anime/manga data</p><a href="https://jikan.moe" target="_blank" rel="noopener">Docs ↗</a></div>
+<div class="api-card"><span class="key nokey">🆓</span><b>Open Trivia</b><p>Quiz questions</p><a href="https://opentdb.com/api_config.php" target="_blank" rel="noopener">Docs ↗</a></div>
+<div class="api-card"><span class="key nokey">🆓</span><b>Deck of Cards</b><p>Card game API</p><a href="https://deckofcardsapi.com" target="_blank" rel="noopener">Docs ↗</a></div>
+<div class="api-card"><span class="key nokey">🆓</span><b>HTTPBin</b><p>HTTP testing</p><a href="https://httpbin.org" target="_blank" rel="noopener">Docs ↗</a></div>
 </div>
 
-<h2 class="cat-title">🔗 Utility APIs</h2>
-<div class="api-card">
-  <h3>is.gd Shortener <span class="badge free">NO KEY</span></h3>
-  <p>लंबे URL को छोटा करो — एक GET request में।</p>
-  <code>https://is.gd/create.php?format=simple&amp;url=YOUR_URL</code>
-  <div class="api-links"><a href="https://is.gd/developers.php" target="_blank" rel="noopener">📄 Docs →</a></div>
-</div>
-
-<div class="ad-slot">Advertisement</div>
-
-<div class="info-card">
-  <h2>⚠️ ध्यान दें</h2>
-  <p>ये सब third-party फ्री सेवाएं हैं — इनके नियम और लिमिट बदल सकते हैं। कमर्शियल इस्तेमाल से पहले उनकी शर्तें पढ़ लें।</p>
-</div>
-
-<nav class="bottom-nav">
-  <a href="index.html"><span class="ico">🏠</span>होम</a>
-  <a href="tools.html"><span class="ico">💼</span>टूल्स</a>
-  <a href="saved.html"><span class="ico">⭐</span>सेव्ड</a>
-  <a href="account.html"><span class="ico">👤</span>खाता</a>
+<div class="ad-slot">AdSense — In-article Ad</div>
+<p class="muted" style="margin-top:16px">💡 <b>Note:</b> 🔑 wali APIs me free signup karke API key milegi — free tier me kaafi usage milta hai. Koi dead link mile to humein <a href="contact.html">contact</a> par batao!</p>
+</main>
+<nav class="bottomnav">
+<a href="index.html">🏠<span>होम</span></a>
+<a href="tools.html">🧰<span>टूल्स</span></a>
+<a href="saved.html">🔖<span>सेव्ड</span></a>
+<a href="account.html">👤<span>खाता</span></a>
 </nav>
+</div>
 </body>
 </html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>500+ AI Tools Directory — Toolkit</title>
+<meta name="description" content="500+ AI tools ki sabse badi free directory — chatbots, image, video, voice, coding, writing aur bahut kuch.">
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+.dir-search{position:sticky;top:56px;z-index:5;background:#f8f7ff;padding:10px 0}
+.dir-search input{width:100%;padding:12px 16px;border:2px solid #7c3aed;border-radius:25px;font-size:15px;outline:none}
+.cat-row{display:flex;gap:8px;overflow-x:auto;padding:10px 0;scrollbar-width:none}
+.cat-row::-webkit-scrollbar{display:none}
+.cat-btn{white-space:nowrap;padding:8px 14px;border-radius:20px;border:1px solid #ddd;background:#fff;font-size:13px;cursor:pointer}
+.cat-btn.on{background:#7c3aed;color:#fff;border-color:#7c3aed}
+.tool-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;margin-top:6px}
+.tcard{background:#fff;border:1px solid #eee;border-radius:12px;padding:12px;font-size:13px;display:flex;flex-direction:column}
+.tcard b{font-size:14px;margin-bottom:2px}
+.tcard p{color:#666;margin:4px 0 8px;flex:1;line-height:1.4}
+.tcard .go{color:#fff;background:linear-gradient(135deg,#7c3aed,#2563eb);text-align:center;padding:7px;border-radius:8px;font-weight:600;font-size:13px;text-decoration:none}
+.tag{align-self:flex-start;font-size:10px;padding:2px 8px;border-radius:12px;margin-bottom:6px;font-weight:600}
+.tag.free{background:#dcfce7;color:#166534}.tag.freemium{background:#fef3c7;color:#92400e}.tag.paid{background:#fee2e2;color:#991b1b}
+.count-line{text-align:center;color:#7c3aed;font-weight:700;margin:8px 0}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="topbar"><a class="back" href="index.html">‹</a><h1>🤖 AI Tools Directory</h1></header>
+<main class="page">
+<div class="ad-slot">AdSense — In-article Ad</div>
+<p class="count-line" id="countLine"></p>
+<div class="dir-search"><input id="q" type="search" placeholder="🔍 AI tool खोजो... (jaise: video, photo, chat)"></div>
+<div class="cat-row" id="catRow"></div>
+<div class="tool-grid" id="grid"></div>
+<div class="ad-slot">AdSense — In-article Ad</div>
+<p class="muted" style="margin-top:12px">💡 Ye duniya ke mashhoor AI tools ki directory hai — link par tap karo, tool ki official site khulegi. Koi link kaam na kare to <a href="contact.html">humein batao</a>, turant fix karenge!</p>
+</main>
+<nav class="bottomnav">
+<a href="index.html">🏠<span>होम</span></a>
+<a href="tools.html">🧰<span>टूल्स</span></a>
+<a href="saved.html">🔖<span>सेव्ड</span></a>
+<a href="account.html">👤<span>खाता</span></a>
+</nav>
+</div>
+<script src="assets/ai-tools-data.js"></script>
+<script>
+const grid=document.getElementById('grid'),q=document.getElementById('q'),catRow=document.getElementById('catRow'),countLine=document.getElementById('countLine');
+let curCat='all',query='';
+const tagHi={free:'🆓 फ्री',freemium:'🎁 फ्रीमियम',paid:'💳 पेड'};
+function renderCats(){
+  let h='<button class="cat-btn'+(curCat==='all'?' on':'')+'" data-c="all">🌟 सभी</button>';
+  for(const k in AI_CATS)h+='<button class="cat-btn'+(curCat===k?' on':'')+'" data-c="'+k+'">'+AI_CATS[k]+'</button>';
+  catRow.innerHTML=h;
+  catRow.querySelectorAll('.cat-btn').forEach(b=>b.onclick=()=>{curCat=b.dataset.c;renderCats();render();});
+}
+function render(){
+  const list=AI_TOOLS.filter(t=>(curCat==='all'||t.c===curCat)&&(!query||(t.n+' '+t.d).toLowerCase().includes(query)));
+  countLine.textContent='📦 '+list.length+' AI Tools';
+  grid.innerHTML=list.map(t=>'<div class="tcard"><span class="tag '+t.t+'">'+tagHi[t.t]+'</span><b>'+t.n+'</b><p>'+t.d+'</p><a class="go" href="'+t.u+'" target="_blank" rel="noopener">खोलो ↗</a></div>').join('')||'<p class="muted">Kuch nahi mila — kuch aur try karo!</p>';
+}
+q.oninput=()=>{query=q.value.trim().toLowerCase();render();};
+renderCats();render();
+</script>
+</body>
+</html>
