@@ -49,12 +49,12 @@ const TOOLS = [
   { id: 'percentage-calculator',name: 'Percentage Calculator',icon: 'percent', bg: '#fef9c3', file: 'tools/percentage-calculator.html' },
 ];
 
-const savedSet = () => new Set(JSON.parse(localStorage.getItem('toolkit_saved') || '[]'));
+const savedSet = () => { try { return new Set(JSON.parse(localStorage.getItem('toolkit_saved') || '[]')); } catch (e) { return new Set(); } };
 const isSaved = id => savedSet().has(id);
 function toggleSave(id) {
   const s = savedSet();
   s.has(id) ? s.delete(id) : s.add(id);
-  localStorage.setItem('toolkit_saved', JSON.stringify([...s]));
+  try { localStorage.setItem('toolkit_saved', JSON.stringify([...s])); } catch (e) {}
   document.querySelectorAll(`.star[data-id="${id}"]`).forEach(b => b.classList.toggle('on', s.has(id)));
 }
 
