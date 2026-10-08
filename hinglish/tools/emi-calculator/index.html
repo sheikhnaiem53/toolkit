@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="hi-Latn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>EMI Calculator — Loan Ki Kist Nikalo | Toolkit</title>
+<meta name="description" content="Muft EMI calculator: slider se loan raashi, byaaj dar aur avadhi chuno — maasik kist, kul byaaj turant. 100% free.">
+<link rel="canonical" href="https://toolkitsite.netlify.app/hinglish/tools/emi-calculator/">
+<link rel="alternate" hreflang="hi" href="https://toolkitsite.netlify.app/tools/emi-calculator/">
+<link rel="alternate" hreflang="en" href="https://toolkitsite.netlify.app/en/tools/emi-calculator/">
+<link rel="alternate" hreflang="hi-Latn" href="https://toolkitsite.netlify.app/hinglish/tools/emi-calculator/">
+<link rel="alternate" hreflang="x-default" href="https://toolkitsite.netlify.app/tools/emi-calculator/">
+<meta name="theme-color" content="#4f46e5">
+<meta property="og:site_name" content="Toolkit">
+<meta property="og:type" content="website">
+<meta property="og:title" content="EMI Calculator — Loan Ki Kist Nikalo | Toolkit">
+<meta property="og:description" content="Muft EMI calculator: slider se loan raashi, byaaj dar aur avadhi chuno — maasik kist, kul byaaj turant. 100% free.">
+<meta property="og:url" content="https://toolkitsite.netlify.app/hinglish/tools/emi-calculator/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="EMI Calculator — Loan Ki Kist Nikalo | Toolkit">
+<meta name="twitter:description" content="Muft EMI calculator: slider se loan raashi, byaaj dar aur avadhi chuno — maasik kist, kul byaaj turant. 100% free.">
+<link rel="stylesheet" href="/assets/styles.css">
+<script async src="/assets/analytics.js"></script>
+<!-- AdSense: paste code here after approval -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"EMI Calculator","url":"https://toolkitsite.netlify.app/hinglish/tools/emi-calculator/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","inLanguage":"hi-Latn","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"description":"Home, car ya personal loan ki maasik kist aur kul byaaj turant nikaalo."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"EMI kaise nikaali jaati hai?","acceptedAnswer":{"@type":"Answer","text":"Ghat-te balance (reducing balance) wale standard formula se — usi tareeke se jaise bank hisaab lagaate hain."}},{"@type":"Question","name":"Kya isme processing fee ya GST shaamil hai?","acceptedAnswer":{"@type":"Answer","text":"Nahi. Ye sirf mooldhan aur byaaj ka hisaab hai. Asli laagat me bank ki fee aur charge alag se judte hain."}},{"@type":"Question","name":"Ye nateeja kitna bharosemand hai?","acceptedAnswer":{"@type":"Answer","text":"Ye ek anumaan hai, vittiya salaah nahi. Loan lene se pehle asli darein aur shartein apne bank se zaroor confirm karein."}},{"@type":"Question","name":"EMI kam karne ke kya tareeke hain?","acceptedAnswer":{"@type":"Answer","text":"Zyada down payment, lambi avadhi (byaaj badhega), ya kam byaaj dar wala loan chun-ne se maasik kist ghat-ti hai."}},{"@type":"Question","name":"Kya ye free hai?","acceptedAnswer":{"@type":"Answer","text":"Haan, poori tarah free — koi sign-up nahi."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://toolkitsite.netlify.app/hinglish/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://toolkitsite.netlify.app/hinglish/tools/"},{"@type":"ListItem","position":3,"name":"EMI Calculator"}]}</script>
+</head>
+<body>
+<a class="sr-only" href="#main">Mukhya content par jayen</a>
+<header class="site-header"><div class="wrap">
+<a class="logo" href="/hinglish/"><span class="logo-mark">T</span><span class="logo-name">Toolkit<small>Saare free online tools ek jagah</small></span></a>
+<nav class="hnav" aria-label="Primary">
+<a href="/hinglish/">Home</a><a href="/hinglish/tools/">Tools</a><a href="/hinglish/saved/">Saved</a>
+</nav>
+<button id="menubtn" class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="mmenu" onclick="toggleMenu()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+<div class="lang-switch"><a class="lang-btn" aria-current="false" href="https://toolkitsite.netlify.app/tools/emi-calculator/">हिंदी</a><a class="lang-btn" aria-current="false" href="https://toolkitsite.netlify.app/en/tools/emi-calculator/">EN</a><a class="lang-btn on" aria-current="page" href="https://toolkitsite.netlify.app/hinglish/tools/emi-calculator/">Hing</a></div>
+</div></header>
+<nav class="mobile-menu" id="mmenu" aria-label="Mobile">
+<a href="/hinglish/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><span>Home</span></a>
+<a href="/hinglish/tools/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg><span>Tools</span></a>
+<a href="/hinglish/saved/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span>Saved</span></a>
+<a href="/hinglish/ai-tools/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><span>481+ AI Tools</span></a>
+<a href="/hinglish/free-apis/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg><span>50+ Free APIs</span></a>
+<a href="/hinglish/about/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg><span>Hamare baare mein</span></a>
+<a href="/hinglish/contact/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span>Sampark</span></a>
+</nav>
+<div class="wrap" id="main">
+<nav class="crumb" aria-label="Breadcrumb"><a href="/hinglish/">Home</a> › <a href="/hinglish/tools/">Tools</a> › <span aria-current="page">EMI Calculator</span></nav>
+<div class="tool-head">
+<h1>EMI Calculator</h1>
+<button class="save-btn star" data-id="emi-calculator" aria-pressed="false" aria-label="Is tool ko save karo">★ Is tool ko save karo</button>
+</div>
+<p class="tool-tag">Home, car ya personal loan ki maasik kist aur kul byaaj turant nikaalo.</p>
+<h2 class="sr-only">Tool box</h2><div class="toolbox"><div class="toolbox" id="tb-emi-calculator">
+  <div class="field">
+    <label for="emi-p">लोन राशि <span class="val" id="emi-p-val">₹25,00,000</span></label>
+    <input type="range" id="emi-p" min="50000" max="20000000" step="50000" value="2500000">
+  </div>
+  <div class="field">
+    <label for="emi-r">ब्याज दर (सालाना %) <span class="val" id="emi-r-val">9%</span></label>
+    <input type="range" id="emi-r" min="1" max="24" step="0.1" value="9">
+  </div>
+  <div class="field">
+    <label for="emi-n">अवधि (साल) <span class="val" id="emi-n-val">20 साल</span></label>
+    <input type="range" id="emi-n" min="1" max="30" step="1" value="20">
+  </div>
+  <div class="result">
+    <span class="muted-sm">मासिक EMI</span>
+    <div class="big" id="emi-emi">—</div>
+    <div class="kv"><span>कुल ब्याज</span><b id="emi-interest">—</b></div>
+    <div class="kv"><span>कुल भुगतान</span><b id="emi-total">—</b></div>
+  </div>
+  <div class="btn-row">
+    <button class="btn secondary" data-act="copy">📋 कॉपी</button>
+    <button class="btn secondary" data-act="download">⬇️ डाउनलोड</button>
+    <button class="btn secondary" data-act="reset">🔄 रीसेट</button>
+  </div>
+  <p class="tool-err" role="alert" hidden></p>
+</div>
+</div><script>window.TOOL_LANG="hing";</script><script>
+(function () {
+  'use strict';
+  var root = document.getElementById('tb-emi-calculator');
+  if (!root) return;
+  var LANG = window.TOOL_LANG || 'hi';
+  var MSG = {
+    hi:   { copied: '✓ कॉपी हो गया', copyFail: 'कॉपी नहीं हुआ — टेक्स्ट खुद सेलेक्ट करके कॉपी करें।' },
+    en:   { copied: '✓ Copied', copyFail: 'Copy failed — please select the text manually.' },
+    hing: { copied: '✓ Copy ho gaya', copyFail: 'Copy nahi hua — text khud select karke copy karo.' }
+  };
+  function t(k) { var m = MSG[LANG] || MSG.hi; return m[k] || MSG.hi[k] || k; }
+  function $(s) { return root.querySelector(s); }
+  var errEl = root.querySelector('.tool-err');
+  function showErr(m) { errEl.textContent = m; errEl.hidden = false; }
+  function hideErr() { errEl.hidden = true; errEl.textContent = ''; }
+  function flash(btn, msg) { var o = btn.innerHTML; btn.innerHTML = msg; setTimeout(function () { btn.innerHTML = o; }, 1500); }
+  function copyText(str, btn) {
+    hideErr();
+    var done = function () { flash(btn, t('copied')); };
+    var fb = function () {
+      var ta = document.createElement('textarea');
+      ta.value = str; ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed'; ta.style.top = '0'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); done(); } catch (e) { showErr(t('copyFail')); }
+      document.body.removeChild(ta);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(str).then(done, fb);
+    else fb();
+  }
+  function saveText(name, text) {
+    var blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob); a.download = name;
+    document.body.appendChild(a); a.click();
+    setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 800);
+  }
+
+  var inr = new Intl.NumberFormat('en-IN', { maximumFractionDigits: 0 });
+  var DEF = { p: 2500000, r: 9, n: 20 };
+  var lastSummary = '';
+  function calc() {
+    var P = +$('#emi-p').value, annual = +$('#emi-r').value, years = +$('#emi-n').value;
+    var r = annual / 12 / 100, n = years * 12;
+    var emi = (r === 0 || n === 0) ? P / Math.max(n, 1) : P * r * Math.pow(1 + r, n) / (Math.pow(1 + r, n) - 1);
+    $('#emi-p-val').textContent = '₹' + inr.format(P);
+    $('#emi-r-val').textContent = annual + '%';
+    $('#emi-n-val').textContent = years + ' साल';
+    var emiT = '₹' + inr.format(Math.round(emi));
+    var intT = '₹' + inr.format(Math.round(emi * n - P));
+    var totT = '₹' + inr.format(Math.round(emi * n));
+    $('#emi-emi').textContent = emiT;
+    $('#emi-interest').textContent = intT;
+    $('#emi-total').textContent = totT;
+    lastSummary = 'लोन राशि: ₹' + inr.format(P) + '\nब्याज दर: ' + annual + '%\nअवधि: ' + years + ' साल' +
+                  '\nमासिक EMI: ' + emiT + '\nकुल ब्याज: ' + intT + '\nकुल भुगतान: ' + totT;
+  }
+  ['emi-p', 'emi-r', 'emi-n'].forEach(function (id) {
+    $('#' + id).addEventListener('input', function () { hideErr(); calc(); });
+  });
+  root.querySelector('[data-act="copy"]').addEventListener('click', function () { copyText(lastSummary, this); });
+  root.querySelector('[data-act="download"]').addEventListener('click', function () { saveText('emi.txt', lastSummary); });
+  root.querySelector('[data-act="reset"]').addEventListener('click', function () {
+    $('#emi-p').value = DEF.p; $('#emi-r').value = DEF.r; $('#emi-n').value = DEF.n;
+    hideErr(); calc();
+  });
+  calc();
+})();
+</script>
+<section class="tool-sec"><h2>Kaise istemal karen</h2><ol><li>Slider se loan raashi, saalana byaaj dar aur avadhi (saal) set karo.</li><li>Maasik EMI apne-aap neeche dikhegi.</li><li>Kul byaaj aur kul bhugtaan dekhkar loan ki tulna karo.</li></ol></section>
+<section class="tool-sec"><h2>Features</h2><ul><li>Slider se raashi (₹50 hazaar–₹2 crore), dar aur avadhi chuno</li><li>Maasik EMI ke saath kul byaaj aur kul bhugtaan</li><li>Slider hilaate hi nateeja turant update</li><li>Home, car, personal — har tarah ke loan ke liye</li></ul></section>
+<section class="tool-sec"><h2>Aksar puche jaane wale sawal</h2><div class="faq-item"><h3>EMI kaise nikaali jaati hai?</h3><p>Ghat-te balance (reducing balance) wale standard formula se — usi tareeke se jaise bank hisaab lagaate hain.</p></div><div class="faq-item"><h3>Kya isme processing fee ya GST shaamil hai?</h3><p>Nahi. Ye sirf mooldhan aur byaaj ka hisaab hai. Asli laagat me bank ki fee aur charge alag se judte hain.</p></div><div class="faq-item"><h3>Ye nateeja kitna bharosemand hai?</h3><p>Ye ek anumaan hai, vittiya salaah nahi. Loan lene se pehle asli darein aur shartein apne bank se zaroor confirm karein.</p></div><div class="faq-item"><h3>EMI kam karne ke kya tareeke hain?</h3><p>Zyada down payment, lambi avadhi (byaaj badhega), ya kam byaaj dar wala loan chun-ne se maasik kist ghat-ti hai.</p></div><div class="faq-item"><h3>Kya ye free hai?</h3><p>Haan, poori tarah free — koi sign-up nahi.</p></div></section>
+<section class="tool-sec"><h2>Milte-julte tools</h2><div class="rel-grid"><a class="tool-card" href="/hinglish/tools/gst-calculator/"><span class="star" data-id="gst-calculator" role="button" tabindex="0" aria-pressed="false" aria-label="Is tool ko save karo: GST Calculator">★</span><span class="tool-tile" style="background:#ffedd5">🧾</span><h3>GST Calculator</h3></a><a class="tool-card" href="/hinglish/tools/percentage-calculator/"><span class="star" data-id="percentage-calculator" role="button" tabindex="0" aria-pressed="false" aria-label="Is tool ko save karo: Percentage Calculator">★</span><span class="tool-tile" style="background:#dcfce7">📊</span><h3>Percentage Calculator</h3></a><a class="tool-card" href="/hinglish/tools/age-calculator/"><span class="star" data-id="age-calculator" role="button" tabindex="0" aria-pressed="false" aria-label="Is tool ko save karo: Age Calculator">★</span><span class="tool-tile" style="background:#fae8ff">🎂</span><h3>Age Calculator</h3></a><a class="tool-card" href="/hinglish/tools/bmi-calculator/"><span class="star" data-id="bmi-calculator" role="button" tabindex="0" aria-pressed="false" aria-label="Is tool ko save karo: BMI Calculator">★</span><span class="tool-tile" style="background:#e0f2fe">⚖️</span><h3>BMI Calculator</h3></a></div></section>
+<!-- AdSense: paste code here after approval -->
+</div>
+<footer class="site-footer"><div class="wrap"><div class="foot-grid">
+<div class="foot-brand"><a class="logo" href="/hinglish/"><span class="logo-mark">T</span><span class="logo-name">Toolkit</span></a><p>Saare free online tools ek jagah.</p>
+<div class="foot-social"><a href="#" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.7 3H21l-7.1 8.2L22.2 21h-6.6l-5.1-6.1L4.6 21H1.3l7.6-8.8L1.8 3h6.7l4.6 5.6L17.7 3zm-1.2 16h1.8L7.1 4.9H5.2l11.3 14.1z"/></svg></a><a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 7.2s-.2-1.6-.9-2.3c-.9-.9-1.9-.9-2.4-1C16.4 3.6 12 3.6 12 3.6s-4.4 0-7.7.3c-.5.1-1.5.1-2.4 1-.7.7-.9 2.3-.9 2.3S.8 9.1.8 11v1.8c0 1.9.2 3.8.2 3.8s.2 1.6.9 2.3c.9.9 2 .9 2.6 1 1.9.2 7.5.3 7.5.3s4.4 0 7.7-.4c.5-.1 1.5-.1 2.4-1 .7-.7.9-2.3.9-2.3s.2-1.9.2-3.8V11c0-1.9-.2-3.8-.2-3.8zM9.8 15.1V8.4l6.2 3.4-6.2 3.3z"/></svg></a><a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.3" fill="currentColor" stroke="none"/></svg></a></div>
+</div>
+<div class="foot-col">
+<h4>Tools</h4>
+<a href="/hinglish/tools/">Tools</a>
+<a href="/hinglish/ai-tools/">481+ AI Tools</a>
+<a href="/hinglish/free-apis/">50+ Free APIs</a>
+<a href="/hinglish/saved/">Saved</a>
+</div>
+<div class="foot-col">
+<h4>Kanooni</h4>
+<a href="/hinglish/about/">Hamare baare mein</a>
+<a href="/hinglish/contact/">Sampark</a>
+<a href="/hinglish/privacy/">Privacy</a>
+<a href="/hinglish/terms/">Niyam</a>
+</div>
+</div>
+<div class="foot-bottom"><span>© 2026 Toolkit · Sarvadhikar surakshit</span></div>
+</div></footer>
+<script src="/assets/site.js" defer></script>
+</body></html>

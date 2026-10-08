@@ -1,28 +1,211 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://toolkitsite.netlify.app/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://toolkitsite.netlify.app/tools.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://toolkitsite.netlify.app/free-apis.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://toolkitsite.netlify.app/tools/ai-chat.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://toolkitsite.netlify.app/tools/ai-image.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://toolkitsite.netlify.app/tools/ai-writer.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://toolkitsite.netlify.app/tools/hashtag-generator.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://toolkitsite.netlify.app/tools/image-compressor.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://toolkitsite.netlify.app/tools/qr-generator.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://toolkitsite.netlify.app/tools/password-generator.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://toolkitsite.netlify.app/tools/word-counter.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://toolkitsite.netlify.app/tools/text-to-speech.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://toolkitsite.netlify.app/tools/emi-calculator.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://toolkitsite.netlify.app/tools/url-shortener.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://toolkitsite.netlify.app/tools/color-picker.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://toolkitsite.netlify.app/tools/age-calculator.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://toolkitsite.netlify.app/tools/unit-converter.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://toolkitsite.netlify.app/tools/gst-calculator.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://toolkitsite.netlify.app/tools/bmi-calculator.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://toolkitsite.netlify.app/tools/percentage-calculator.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://toolkitsite.netlify.app/about.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://toolkitsite.netlify.app/privacy.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://toolkitsite.netlify.app/terms.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://toolkitsite.netlify.app/contact.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://toolkitsite.netlify.app/ai-tools.html</loc></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://toolkitsite.netlify.app/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolkitsite.netlify.app/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolkitsite.netlify.app/en/"/>
+    <xhtml:link rel="alternate" hreflang="hi-Latn" href="https://toolkitsite.netlify.app/hinglish/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolkitsite.netlify.app/"/>
+  </url>
+  <url>
+    <loc>https://toolkitsite.netlify.app/about/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolkitsite.netlify.app/about/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolkitsite.netlify.app/en/about/"/>
+    <xhtml:link rel="alternate" hreflang="hi-Latn" href="https://toolkitsite.netlify.app/hinglish/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolkitsite.netlify.app/about/"/>
+  </url>
+  <url>
+    <loc>https://toolkitsite.netlify.app/ai-tools/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolkitsite.netlify.app/ai-tools/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolkitsite.netlify.app/en/ai-tools/"/>
+    <xhtml:link rel="alternate" hreflang="hi-Latn" href="https://toolkitsite.netlify.app/hinglish/ai-tools/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolkitsite.netlify.app/ai-tools/"/>
+  </url>
+  <url>
+    <loc>https://toolkitsite.netlify.app/contact/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolkitsite.netlify.app/contact/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolkitsite.netlify.app/en/contact/"/>
+    <xhtml:link rel="alternate" hreflang="hi-Latn" href="https://toolkitsite.netlify.app/hinglish/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolkitsite.netlify.app/contact/"/>
+  </url>
+  <url>
+    <loc>https://toolkitsite.netlify.app/free-apis/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolkitsite.netlify.app/free-apis/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolkitsite.netlify.app/en/free-apis/"/>
+    <xhtml:link rel="alternate" hreflang="hi-Latn" href="https://toolkitsite.netlify.app/hinglish/free-apis/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolkitsite.netlify.app/free-apis/"/>
+  </url>
+  <url>
+    <loc>https://toolkitsite.netlify.app/privacy/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolkitsite.netlify.app/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolkitsite.netlify.app/en/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="hi-Latn" href="https://toolkitsite.netlify.app/hinglish/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolkitsite.netlify.app/privacy/"/>
+  </url>
+  <url>
+    <loc>https://toolkitsite.netlify.app/saved/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolkitsite.netlify.app/saved/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolkitsite.netlify.app/en/saved/"/>
+    <xhtml:link rel="alternate" hreflang="hi-Latn" href="https://toolkitsite.netlify.app/hinglish/saved/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolkitsite.netlify.app/saved/"/>
+  </url>
+  <url>
+    <loc>https://toolkitsite.netlify.app/terms/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolkitsite.netlify.app/terms/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolkitsite.netlify.app/en/terms/"/>
+    <xhtml:link rel="alternate" hreflang="hi-Latn" href="https://toolkitsite.netlify.app/hinglish/terms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolkitsite.netlify.app/terms/"/>
+  </url>
+  <url>
+    <loc>https://toolkitsite.netlify.app/tools/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolkitsite.netlify.app/tools/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolkitsite.netlify.app/en/tools/"/>
+    <xhtml:link rel="alternate" hreflang="hi-Latn" href="https://toolkitsite.netlify.app/hinglish/tools/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolkitsite.netlify.app/tools/"/>
+  </url>
+  <url>
+    <loc>https://toolkitsite.netlify.app/tools/age-calculator/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolkitsite.netlify.app/tools/age-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolkitsite.netlify.app/en/tools/age-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="hi-Latn" href="https://toolkitsite.netlify.app/hinglish/tools/age-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolkitsite.netlify.app/tools/age-calculator/"/>
+  </url>
+  <url>
+    <loc>https://toolkitsite.netlify.app/tools/ai-chat/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolkitsite.netlify.app/tools/ai-chat/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolkitsite.netlify.app/en/tools/ai-chat/"/>
+    <xhtml:link rel="alternate" hreflang="hi-Latn" href="https://toolkitsite.netlify.app/hinglish/tools/ai-chat/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolkitsite.netlify.app/tools/ai-chat/"/>
+  </url>
+  <url>
+    <loc>https://toolkitsite.netlify.app/tools/ai-image/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolkitsite.netlify.app/tools/ai-image/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolkitsite.netlify.app/en/tools/ai-image/"/>
+    <xhtml:link rel="alternate" hreflang="hi-Latn" href="https://toolkitsite.netlify.app/hinglish/tools/ai-image/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolkitsite.netlify.app/tools/ai-image/"/>
+  </url>
+  <url>
+    <loc>https://toolkitsite.netlify.app/tools/ai-writer/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolkitsite.netlify.app/tools/ai-writer/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolkitsite.netlify.app/en/tools/ai-writer/"/>
+    <xhtml:link rel="alternate" hreflang="hi-Latn" href="https://toolkitsite.netlify.app/hinglish/tools/ai-writer/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolkitsite.netlify.app/tools/ai-writer/"/>
+  </url>
+  <url>
+    <loc>https://toolkitsite.netlify.app/tools/bmi-calculator/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolkitsite.netlify.app/tools/bmi-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolkitsite.netlify.app/en/tools/bmi-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="hi-Latn" href="https://toolkitsite.netlify.app/hinglish/tools/bmi-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolkitsite.netlify.app/tools/bmi-calculator/"/>
+  </url>
+  <url>
+    <loc>https://toolkitsite.netlify.app/tools/color-picker/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolkitsite.netlify.app/tools/color-picker/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolkitsite.netlify.app/en/tools/color-picker/"/>
+    <xhtml:link rel="alternate" hreflang="hi-Latn" href="https://toolkitsite.netlify.app/hinglish/tools/color-picker/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolkitsite.netlify.app/tools/color-picker/"/>
+  </url>
+  <url>
+    <loc>https://toolkitsite.netlify.app/tools/emi-calculator/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolkitsite.netlify.app/tools/emi-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolkitsite.netlify.app/en/tools/emi-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="hi-Latn" href="https://toolkitsite.netlify.app/hinglish/tools/emi-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolkitsite.netlify.app/tools/emi-calculator/"/>
+  </url>
+  <url>
+    <loc>https://toolkitsite.netlify.app/tools/gst-calculator/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolkitsite.netlify.app/tools/gst-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolkitsite.netlify.app/en/tools/gst-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="hi-Latn" href="https://toolkitsite.netlify.app/hinglish/tools/gst-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolkitsite.netlify.app/tools/gst-calculator/"/>
+  </url>
+  <url>
+    <loc>https://toolkitsite.netlify.app/tools/hashtag-generator/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolkitsite.netlify.app/tools/hashtag-generator/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolkitsite.netlify.app/en/tools/hashtag-generator/"/>
+    <xhtml:link rel="alternate" hreflang="hi-Latn" href="https://toolkitsite.netlify.app/hinglish/tools/hashtag-generator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolkitsite.netlify.app/tools/hashtag-generator/"/>
+  </url>
+  <url>
+    <loc>https://toolkitsite.netlify.app/tools/image-compressor/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolkitsite.netlify.app/tools/image-compressor/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolkitsite.netlify.app/en/tools/image-compressor/"/>
+    <xhtml:link rel="alternate" hreflang="hi-Latn" href="https://toolkitsite.netlify.app/hinglish/tools/image-compressor/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolkitsite.netlify.app/tools/image-compressor/"/>
+  </url>
+  <url>
+    <loc>https://toolkitsite.netlify.app/tools/password-generator/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolkitsite.netlify.app/tools/password-generator/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolkitsite.netlify.app/en/tools/password-generator/"/>
+    <xhtml:link rel="alternate" hreflang="hi-Latn" href="https://toolkitsite.netlify.app/hinglish/tools/password-generator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolkitsite.netlify.app/tools/password-generator/"/>
+  </url>
+  <url>
+    <loc>https://toolkitsite.netlify.app/tools/percentage-calculator/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolkitsite.netlify.app/tools/percentage-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolkitsite.netlify.app/en/tools/percentage-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="hi-Latn" href="https://toolkitsite.netlify.app/hinglish/tools/percentage-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolkitsite.netlify.app/tools/percentage-calculator/"/>
+  </url>
+  <url>
+    <loc>https://toolkitsite.netlify.app/tools/qr-generator/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolkitsite.netlify.app/tools/qr-generator/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolkitsite.netlify.app/en/tools/qr-generator/"/>
+    <xhtml:link rel="alternate" hreflang="hi-Latn" href="https://toolkitsite.netlify.app/hinglish/tools/qr-generator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolkitsite.netlify.app/tools/qr-generator/"/>
+  </url>
+  <url>
+    <loc>https://toolkitsite.netlify.app/tools/text-to-speech/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolkitsite.netlify.app/tools/text-to-speech/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolkitsite.netlify.app/en/tools/text-to-speech/"/>
+    <xhtml:link rel="alternate" hreflang="hi-Latn" href="https://toolkitsite.netlify.app/hinglish/tools/text-to-speech/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolkitsite.netlify.app/tools/text-to-speech/"/>
+  </url>
+  <url>
+    <loc>https://toolkitsite.netlify.app/tools/unit-converter/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolkitsite.netlify.app/tools/unit-converter/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolkitsite.netlify.app/en/tools/unit-converter/"/>
+    <xhtml:link rel="alternate" hreflang="hi-Latn" href="https://toolkitsite.netlify.app/hinglish/tools/unit-converter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolkitsite.netlify.app/tools/unit-converter/"/>
+  </url>
+  <url>
+    <loc>https://toolkitsite.netlify.app/tools/url-shortener/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolkitsite.netlify.app/tools/url-shortener/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolkitsite.netlify.app/en/tools/url-shortener/"/>
+    <xhtml:link rel="alternate" hreflang="hi-Latn" href="https://toolkitsite.netlify.app/hinglish/tools/url-shortener/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolkitsite.netlify.app/tools/url-shortener/"/>
+  </url>
+  <url>
+    <loc>https://toolkitsite.netlify.app/tools/word-counter/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolkitsite.netlify.app/tools/word-counter/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolkitsite.netlify.app/en/tools/word-counter/"/>
+    <xhtml:link rel="alternate" hreflang="hi-Latn" href="https://toolkitsite.netlify.app/hinglish/tools/word-counter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolkitsite.netlify.app/tools/word-counter/"/>
+  </url>
 </urlset>

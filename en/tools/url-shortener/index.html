@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Free URL Shortener: Shorten Links | Toolkit</title>
+<meta name="description" content="Free URL shortener — turn long links into short ones for easy sharing. One-click copy, no signup.">
+<link rel="canonical" href="https://toolkitsite.netlify.app/en/tools/url-shortener/">
+<link rel="alternate" hreflang="hi" href="https://toolkitsite.netlify.app/tools/url-shortener/">
+<link rel="alternate" hreflang="en" href="https://toolkitsite.netlify.app/en/tools/url-shortener/">
+<link rel="alternate" hreflang="hi-Latn" href="https://toolkitsite.netlify.app/hinglish/tools/url-shortener/">
+<link rel="alternate" hreflang="x-default" href="https://toolkitsite.netlify.app/tools/url-shortener/">
+<meta name="theme-color" content="#4f46e5">
+<meta property="og:site_name" content="Toolkit">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free URL Shortener: Shorten Links | Toolkit">
+<meta property="og:description" content="Free URL shortener — turn long links into short ones for easy sharing. One-click copy, no signup.">
+<meta property="og:url" content="https://toolkitsite.netlify.app/en/tools/url-shortener/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Free URL Shortener: Shorten Links | Toolkit">
+<meta name="twitter:description" content="Free URL shortener — turn long links into short ones for easy sharing. One-click copy, no signup.">
+<link rel="stylesheet" href="/assets/styles.css">
+<script async src="/assets/analytics.js"></script>
+<!-- AdSense: paste code here after approval -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"URL Shortener","url":"https://toolkitsite.netlify.app/en/tools/url-shortener/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","inLanguage":"en","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"description":"Paste a long link — get a short one"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is the URL shortener free?","acceptedAnswer":{"@type":"Answer","text":"Yes, completely free. Shorten as many links as you like, no signup."}},{"@type":"Question","name":"How is the short link created?","acceptedAnswer":{"@type":"Answer","text":"The tool creates short links via the free is.gd service. Clicking the short link takes people to the real long address."}},{"@type":"Question","name":"Will the short link work forever?","acceptedAnswer":{"@type":"Answer","text":"Usually yes, but it depends on a free third-party service. For critical or permanent links, using your own domain is better."}},{"@type":"Question","name":"Do I need to include http:// in the link?","acceptedAnswer":{"@type":"Answer","text":"Pasting the full address is best, like https://example.com/page. An incomplete link may not work."}},{"@type":"Question","name":"Is my data saved?","acceptedAnswer":{"@type":"Answer","text":"No. The tool creates no account and does not store your links anywhere."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://toolkitsite.netlify.app/en/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://toolkitsite.netlify.app/en/tools/"},{"@type":"ListItem","position":3,"name":"URL Shortener"}]}</script>
+</head>
+<body>
+<a class="sr-only" href="#main">Skip to main content</a>
+<header class="site-header"><div class="wrap">
+<a class="logo" href="/en/"><span class="logo-mark">T</span><span class="logo-name">Toolkit<small>All free online tools in one place</small></span></a>
+<nav class="hnav" aria-label="Primary">
+<a href="/en/">Home</a><a href="/en/tools/">Tools</a><a href="/en/saved/">Saved</a>
+</nav>
+<button id="menubtn" class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="mmenu" onclick="toggleMenu()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+<div class="lang-switch"><a class="lang-btn" aria-current="false" href="https://toolkitsite.netlify.app/tools/url-shortener/">हिंदी</a><a class="lang-btn on" aria-current="page" href="https://toolkitsite.netlify.app/en/tools/url-shortener/">EN</a><a class="lang-btn" aria-current="false" href="https://toolkitsite.netlify.app/hinglish/tools/url-shortener/">Hing</a></div>
+</div></header>
+<nav class="mobile-menu" id="mmenu" aria-label="Mobile">
+<a href="/en/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><span>Home</span></a>
+<a href="/en/tools/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg><span>Tools</span></a>
+<a href="/en/saved/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span>Saved</span></a>
+<a href="/en/ai-tools/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><span>481+ AI Tools</span></a>
+<a href="/en/free-apis/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg><span>50+ Free APIs</span></a>
+<a href="/en/about/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg><span>About us</span></a>
+<a href="/en/contact/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span>Contact</span></a>
+</nav>
+<div class="wrap" id="main">
+<nav class="crumb" aria-label="Breadcrumb"><a href="/en/">Home</a> › <a href="/en/tools/">Tools</a> › <span aria-current="page">URL Shortener</span></nav>
+<div class="tool-head">
+<h1>URL Shortener</h1>
+<button class="save-btn star" data-id="url-shortener" aria-pressed="false" aria-label="Save this tool">★ Save this tool</button>
+</div>
+<p class="tool-tag">Paste a long link — get a short one</p>
+<h2 class="sr-only">Toolbox</h2><div class="toolbox"><div class="toolbox" id="tb-url-shortener">
+  <div class="field">
+    <label for="us-url">लंबा URL</label>
+    <input type="text" id="us-url" placeholder="https://example.com/very/long/link" inputmode="url">
+  </div>
+  <button class="btn" id="us-go">✂️ छोटा करो</button>
+  <div id="us-result" class="result" hidden>
+    <span class="muted-sm">छोटा लिंक</span>
+    <div class="big break" id="us-out">—</div>
+  </div>
+  <div class="btn-row">
+    <button class="btn secondary" data-act="copy">📋 कॉपी</button>
+    <button class="btn secondary" data-act="download">⬇️ डाउनलोड</button>
+    <button class="btn secondary" data-act="reset">🔄 रीसेट</button>
+  </div>
+  <p class="tool-err" role="alert" hidden></p>
+</div>
+</div><script>window.TOOL_LANG="en";</script><script>
+(function () {
+  'use strict';
+  var root = document.getElementById('tb-url-shortener');
+  if (!root) return;
+  var LANG = window.TOOL_LANG || 'hi';
+  var MSG = {
+    hi:   { empty: 'कृपया पहले लंबा URL लिखें।', fail: 'लिंक छोटा नहीं हो पाया — URL सही है? इंटरनेट चेक करके फिर try करो।', nothing: 'पहले लिंक छोटा करो, फिर कॉपी/डाउनलोड करो।', copied: '✓ कॉपी हो गया', copyFail: 'कॉपी नहीं हुआ — लिंक खुद सेलेक्ट करके कॉपी करें।' },
+    en:   { empty: 'Please enter the long URL first.', fail: 'Could not shorten the link — is the URL correct? Check internet and try again.', nothing: 'Shorten a link first, then copy/download.', copied: '✓ Copied', copyFail: 'Copy failed — please select the link manually.' },
+    hing: { empty: 'Pehle lamba URL likho.', fail: 'Link chhota nahi ho paya — URL sahi hai? Internet check karke phir try karo.', nothing: 'Pehle link chhota karo, phir copy/download karo.', copied: '✓ Copy ho gaya', copyFail: 'Copy nahi hua — link khud select karke copy karo.' }
+  };
+  function t(k) { var m = MSG[LANG] || MSG.hi; return m[k] || MSG.hi[k] || k; }
+  function $(s) { return root.querySelector(s); }
+  var errEl = root.querySelector('.tool-err');
+  function showErr(m) { errEl.textContent = m; errEl.hidden = false; }
+  function hideErr() { errEl.hidden = true; errEl.textContent = ''; }
+  function flash(btn, msg) { var o = btn.innerHTML; btn.innerHTML = msg; setTimeout(function () { btn.innerHTML = o; }, 1500); }
+  function copyText(str, btn) {
+    if (!str || !String(str).trim() || String(str).trim() === '—') { showErr(t('nothing')); return; }
+    hideErr();
+    var done = function () { flash(btn, t('copied')); };
+    var fb = function () {
+      var ta = document.createElement('textarea');
+      ta.value = str; ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed'; ta.style.top = '0'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); done(); } catch (e) { showErr(t('copyFail')); }
+      document.body.removeChild(ta);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(str).then(done, fb);
+    else fb();
+  }
+  function saveText(name, text) {
+    var blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob); a.download = name;
+    document.body.appendChild(a); a.click();
+    setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 800);
+  }
+
+  $('#us-go').addEventListener('click', function () {
+    hideErr();
+    var url = $('#us-url').value.trim();
+    if (!url) { showErr(t('empty')); $('#us-url').focus(); return; }
+    if (!/^https?:\/\//i.test(url)) url = 'https://' + url;
+    var btn = this, old = btn.innerHTML;
+    btn.innerHTML = '⏳ छोटा हो रहा...'; btn.disabled = true;
+    fetch('https://is.gd/create.php?format=simple&url=' + encodeURIComponent(url))
+      .then(function (r) { return r.text(); })
+      .then(function (short) {
+        short = short.trim();
+        if (short.indexOf('http') !== 0) throw new Error('bad');
+        $('#us-out').textContent = short;
+        $('#us-result').hidden = false;
+      })
+      .catch(function () { showErr(t('fail')); })
+      .then(function () { btn.innerHTML = old; btn.disabled = false; });
+  });
+  root.querySelector('[data-act="copy"]').addEventListener('click', function () { copyText($('#us-out').textContent, this); });
+  root.querySelector('[data-act="download"]').addEventListener('click', function () {
+    var out = $('#us-out').textContent;
+    if (!out || !out.trim() || out.trim() === '—') { showErr(t('nothing')); return; }
+    hideErr(); saveText('short-link.txt', 'लंबा: ' + $('#us-url').value.trim() + '\nछोटा: ' + out);
+  });
+  root.querySelector('[data-act="reset"]').addEventListener('click', function () {
+    $('#us-url').value = ''; $('#us-out').textContent = '—';
+    $('#us-result').hidden = true; hideErr(); $('#us-url').focus();
+  });
+})();
+</script>
+<section class="tool-sec"><h2>How to use</h2><ol><li>Paste the full link in the long-URL box</li><li>Press shorten — the short link is created instantly</li><li>Hit copy and share it on WhatsApp or anywhere</li></ol></section>
+<section class="tool-sec"><h2>Features</h2><ul><li>Long links shortened instantly</li><li>One-click copy button</li><li>Perfect for WhatsApp and sharing</li><li>Completely free, no signup</li><li>Easy to use on mobile</li></ul></section>
+<section class="tool-sec"><h2>Frequently asked questions</h2><div class="faq-item"><h3>Is the URL shortener free?</h3><p>Yes, completely free. Shorten as many links as you like, no signup.</p></div><div class="faq-item"><h3>How is the short link created?</h3><p>The tool creates short links via the free is.gd service. Clicking the short link takes people to the real long address.</p></div><div class="faq-item"><h3>Will the short link work forever?</h3><p>Usually yes, but it depends on a free third-party service. For critical or permanent links, using your own domain is better.</p></div><div class="faq-item"><h3>Do I need to include http:// in the link?</h3><p>Pasting the full address is best, like https://example.com/page. An incomplete link may not work.</p></div><div class="faq-item"><h3>Is my data saved?</h3><p>No. The tool creates no account and does not store your links anywhere.</p></div></section>
+<section class="tool-sec"><h2>Related tools</h2><div class="rel-grid"><a class="tool-card" href="/en/tools/qr-generator/"><span class="star" data-id="qr-generator" role="button" tabindex="0" aria-pressed="false" aria-label="Save this tool: QR Code Generator">★</span><span class="tool-tile" style="background:#e0e7ff">🔳</span><h3>QR Code Generator</h3></a><a class="tool-card" href="/en/tools/hashtag-generator/"><span class="star" data-id="hashtag-generator" role="button" tabindex="0" aria-pressed="false" aria-label="Save this tool: Hashtag Generator">★</span><span class="tool-tile" style="background:#e0f2fe">#️⃣</span><h3>Hashtag Generator</h3></a><a class="tool-card" href="/en/tools/ai-writer/"><span class="star" data-id="ai-writer" role="button" tabindex="0" aria-pressed="false" aria-label="Save this tool: AI Writer">★</span><span class="tool-tile" style="background:#fae8ff">✍️</span><h3>AI Writer</h3></a><a class="tool-card" href="/en/tools/ai-image/"><span class="star" data-id="ai-image" role="button" tabindex="0" aria-pressed="false" aria-label="Save this tool: AI Image Generator">★</span><span class="tool-tile" style="background:#e0f2fe">✨</span><h3>AI Image Generator</h3></a></div></section>
+<!-- AdSense: paste code here after approval -->
+</div>
+<footer class="site-footer"><div class="wrap"><div class="foot-grid">
+<div class="foot-brand"><a class="logo" href="/en/"><span class="logo-mark">T</span><span class="logo-name">Toolkit</span></a><p>All free online tools in one place.</p>
+<div class="foot-social"><a href="#" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.7 3H21l-7.1 8.2L22.2 21h-6.6l-5.1-6.1L4.6 21H1.3l7.6-8.8L1.8 3h6.7l4.6 5.6L17.7 3zm-1.2 16h1.8L7.1 4.9H5.2l11.3 14.1z"/></svg></a><a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 7.2s-.2-1.6-.9-2.3c-.9-.9-1.9-.9-2.4-1C16.4 3.6 12 3.6 12 3.6s-4.4 0-7.7.3c-.5.1-1.5.1-2.4 1-.7.7-.9 2.3-.9 2.3S.8 9.1.8 11v1.8c0 1.9.2 3.8.2 3.8s.2 1.6.9 2.3c.9.9 2 .9 2.6 1 1.9.2 7.5.3 7.5.3s4.4 0 7.7-.4c.5-.1 1.5-.1 2.4-1 .7-.7.9-2.3.9-2.3s.2-1.9.2-3.8V11c0-1.9-.2-3.8-.2-3.8zM9.8 15.1V8.4l6.2 3.4-6.2 3.3z"/></svg></a><a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.3" fill="currentColor" stroke="none"/></svg></a></div>
+</div>
+<div class="foot-col">
+<h4>Tools</h4>
+<a href="/en/tools/">Tools</a>
+<a href="/en/ai-tools/">481+ AI Tools</a>
+<a href="/en/free-apis/">50+ Free APIs</a>
+<a href="/en/saved/">Saved</a>
+</div>
+<div class="foot-col">
+<h4>Legal</h4>
+<a href="/en/about/">About us</a>
+<a href="/en/contact/">Contact</a>
+<a href="/en/privacy/">Privacy</a>
+<a href="/en/terms/">Terms</a>
+</div>
+</div>
+<div class="foot-bottom"><span>© 2026 Toolkit · All rights reserved</span></div>
+</div></footer>
+<script src="/assets/site.js" defer></script>
+</body></html>

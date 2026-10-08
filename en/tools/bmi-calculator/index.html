@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Free BMI Calculator — Check Your BMI | Toolkit</title>
+<meta name="description" content="Free BMI calculator: get your BMI, WHO category and healthy weight range from height and weight. No sign-up — 100% free.">
+<link rel="canonical" href="https://toolkitsite.netlify.app/en/tools/bmi-calculator/">
+<link rel="alternate" hreflang="hi" href="https://toolkitsite.netlify.app/tools/bmi-calculator/">
+<link rel="alternate" hreflang="en" href="https://toolkitsite.netlify.app/en/tools/bmi-calculator/">
+<link rel="alternate" hreflang="hi-Latn" href="https://toolkitsite.netlify.app/hinglish/tools/bmi-calculator/">
+<link rel="alternate" hreflang="x-default" href="https://toolkitsite.netlify.app/tools/bmi-calculator/">
+<meta name="theme-color" content="#4f46e5">
+<meta property="og:site_name" content="Toolkit">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free BMI Calculator — Check Your BMI | Toolkit">
+<meta property="og:description" content="Free BMI calculator: get your BMI, WHO category and healthy weight range from height and weight. No sign-up — 100% free.">
+<meta property="og:url" content="https://toolkitsite.netlify.app/en/tools/bmi-calculator/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Free BMI Calculator — Check Your BMI | Toolkit">
+<meta name="twitter:description" content="Free BMI calculator: get your BMI, WHO category and healthy weight range from height and weight. No sign-up — 100% free.">
+<link rel="stylesheet" href="/assets/styles.css">
+<script async src="/assets/analytics.js"></script>
+<!-- AdSense: paste code here after approval -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"BMI Calculator","url":"https://toolkitsite.netlify.app/en/tools/bmi-calculator/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","inLanguage":"en","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"description":"Enter height and weight — get your BMI, health category and ideal weight range."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is BMI calculated?","acceptedAnswer":{"@type":"Answer","text":"BMI = weight (kg) ÷ height (m)². For example, 65 kg at 1.7 m gives a BMI of about 22.5."}},{"@type":"Question","name":"What are the BMI categories?","acceptedAnswer":{"@type":"Answer","text":"Per WHO: below 18.5 — underweight, 18.5–24.9 — normal, 25–29.9 — overweight, 30 or more — obese."}},{"@type":"Question","name":"Is BMI accurate for everyone?","acceptedAnswer":{"@type":"Answer","text":"It can mislead for athletes, pregnant women and older adults, because it doesn't distinguish muscle from fat. It's only a first screening step."}},{"@type":"Question","name":"Can this replace a doctor's advice?","acceptedAnswer":{"@type":"Answer","text":"No. This tool is for information only. Always consult a doctor before making any weight or health decision."}},{"@type":"Question","name":"Is my data saved?","acceptedAnswer":{"@type":"Answer","text":"No, the calculation runs entirely in your browser. Your height and weight are never uploaded."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://toolkitsite.netlify.app/en/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://toolkitsite.netlify.app/en/tools/"},{"@type":"ListItem","position":3,"name":"BMI Calculator"}]}</script>
+</head>
+<body>
+<a class="sr-only" href="#main">Skip to main content</a>
+<header class="site-header"><div class="wrap">
+<a class="logo" href="/en/"><span class="logo-mark">T</span><span class="logo-name">Toolkit<small>All free online tools in one place</small></span></a>
+<nav class="hnav" aria-label="Primary">
+<a href="/en/">Home</a><a href="/en/tools/">Tools</a><a href="/en/saved/">Saved</a>
+</nav>
+<button id="menubtn" class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="mmenu" onclick="toggleMenu()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+<div class="lang-switch"><a class="lang-btn" aria-current="false" href="https://toolkitsite.netlify.app/tools/bmi-calculator/">हिंदी</a><a class="lang-btn on" aria-current="page" href="https://toolkitsite.netlify.app/en/tools/bmi-calculator/">EN</a><a class="lang-btn" aria-current="false" href="https://toolkitsite.netlify.app/hinglish/tools/bmi-calculator/">Hing</a></div>
+</div></header>
+<nav class="mobile-menu" id="mmenu" aria-label="Mobile">
+<a href="/en/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><span>Home</span></a>
+<a href="/en/tools/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg><span>Tools</span></a>
+<a href="/en/saved/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span>Saved</span></a>
+<a href="/en/ai-tools/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><span>481+ AI Tools</span></a>
+<a href="/en/free-apis/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg><span>50+ Free APIs</span></a>
+<a href="/en/about/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg><span>About us</span></a>
+<a href="/en/contact/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span>Contact</span></a>
+</nav>
+<div class="wrap" id="main">
+<nav class="crumb" aria-label="Breadcrumb"><a href="/en/">Home</a> › <a href="/en/tools/">Tools</a> › <span aria-current="page">BMI Calculator</span></nav>
+<div class="tool-head">
+<h1>BMI Calculator</h1>
+<button class="save-btn star" data-id="bmi-calculator" aria-pressed="false" aria-label="Save this tool">★ Save this tool</button>
+</div>
+<p class="tool-tag">Enter height and weight — get your BMI, health category and ideal weight range.</p>
+<h2 class="sr-only">Toolbox</h2><div class="toolbox"><div class="toolbox" id="tb-bmi-calculator">
+  <div class="field">
+    <label for="bmi-h">लंबाई (cm)</label>
+    <input type="number" id="bmi-h" placeholder="जैसे 170" step="any" min="1">
+  </div>
+  <div class="field">
+    <label for="bmi-w">वज़न (kg)</label>
+    <input type="number" id="bmi-w" placeholder="जैसे 65" step="any" min="1">
+  </div>
+  <button class="btn" id="bmi-go">BMI निकालो</button>
+  <div id="bmi-result" class="result" hidden>
+    <span class="muted-sm">आपका BMI</span>
+    <div class="big" id="bmi-val">—</div>
+    <div class="kv"><span>कैटेगरी</span><b id="bmi-cat">—</b></div>
+    <div class="kv"><span>सही वज़न रेंज</span><b id="bmi-range">—</b></div>
+  </div>
+  <div class="btn-row">
+    <button class="btn secondary" data-act="copy">📋 कॉपी</button>
+    <button class="btn secondary" data-act="download">⬇️ डाउनलोड</button>
+    <button class="btn secondary" data-act="reset">🔄 रीसेट</button>
+  </div>
+  <p class="tool-err" role="alert" hidden></p>
+</div>
+</div><script>window.TOOL_LANG="en";</script><script>
+(function () {
+  'use strict';
+  var root = document.getElementById('tb-bmi-calculator');
+  if (!root) return;
+  var LANG = window.TOOL_LANG || 'hi';
+  var MSG = {
+    hi:   { invalid: 'कृपया सही लंबाई और वज़न लिखें (0 से ज़्यादा)।', nothing: 'पहले BMI निकालो, फिर कॉपी/डाउनलोड करो।', copied: '✓ कॉपी हो गया', copyFail: 'कॉपी नहीं हुआ — टेक्स्ट खुद सेलेक्ट करके कॉपी करें।' },
+    en:   { invalid: 'Please enter valid height and weight (greater than 0).', nothing: 'Calculate BMI first, then copy/download.', copied: '✓ Copied', copyFail: 'Copy failed — please select the text manually.' },
+    hing: { invalid: 'Sahi height aur weight likho (0 se zyada).', nothing: 'Pehle BMI nikalo, phir copy/download karo.', copied: '✓ Copy ho gaya', copyFail: 'Copy nahi hua — text khud select karke copy karo.' }
+  };
+  function t(k) { var m = MSG[LANG] || MSG.hi; return m[k] || MSG.hi[k] || k; }
+  function $(s) { return root.querySelector(s); }
+  var errEl = root.querySelector('.tool-err');
+  function showErr(m) { errEl.textContent = m; errEl.hidden = false; }
+  function hideErr() { errEl.hidden = true; errEl.textContent = ''; }
+  function flash(btn, msg) { var o = btn.innerHTML; btn.innerHTML = msg; setTimeout(function () { btn.innerHTML = o; }, 1500); }
+  function copyText(str, btn) {
+    if (!str || !String(str).trim() || String(str).trim() === '—') { showErr(t('nothing')); return; }
+    hideErr();
+    var done = function () { flash(btn, t('copied')); };
+    var fb = function () {
+      var ta = document.createElement('textarea');
+      ta.value = str; ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed'; ta.style.top = '0'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); done(); } catch (e) { showErr(t('copyFail')); }
+      document.body.removeChild(ta);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(str).then(done, fb);
+    else fb();
+  }
+  function saveText(name, text) {
+    var blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob); a.download = name;
+    document.body.appendChild(a); a.click();
+    setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 800);
+  }
+
+  var lastSummary = '';
+  $('#bmi-go').addEventListener('click', function () {
+    hideErr();
+    var h = parseFloat($('#bmi-h').value), w = parseFloat($('#bmi-w').value);
+    if (!h || !w || h <= 0 || w <= 0) { showErr(t('invalid')); return; }
+    var bmi = w / Math.pow(h / 100, 2);
+    var cat = bmi < 18.5 ? 'कम वज़न (Underweight)' : bmi < 25 ? 'सामान्य (Normal)' : bmi < 30 ? 'ज़्यादा वज़न (Overweight)' : 'मोटापा (Obese)';
+    var range = (18.5 * Math.pow(h / 100, 2)).toFixed(1) + ' – ' + (24.9 * Math.pow(h / 100, 2)).toFixed(1) + ' kg';
+    $('#bmi-val').textContent = bmi.toFixed(1);
+    $('#bmi-cat').textContent = cat;
+    $('#bmi-range').textContent = range;
+    $('#bmi-result').hidden = false;
+    lastSummary = 'BMI: ' + bmi.toFixed(1) + '\nकैटेगरी: ' + cat + '\nसही वज़न रेंज: ' + range;
+  });
+  root.querySelector('[data-act="copy"]').addEventListener('click', function () { copyText(lastSummary, this); });
+  root.querySelector('[data-act="download"]').addEventListener('click', function () {
+    if (!lastSummary) { showErr(t('nothing')); return; }
+    hideErr(); saveText('bmi.txt', lastSummary);
+  });
+  root.querySelector('[data-act="reset"]').addEventListener('click', function () {
+    $('#bmi-h').value = ''; $('#bmi-w').value = ''; lastSummary = '';
+    $('#bmi-result').hidden = true; hideErr(); $('#bmi-h').focus();
+  });
+})();
+</script>
+<section class="tool-sec"><h2>How to use</h2><ol><li>Enter your height (cm) and weight (kg) in the boxes.</li><li>Press the Calculate BMI button.</li><li>See your BMI, category and healthy weight range.</li></ol></section>
+<section class="tool-sec"><h2>Features</h2><ul><li>Accurate BMI using the standard weight ÷ height² formula</li><li>All 4 WHO health categories (under/normal/over/obese)</li><li>Healthy weight range for your height</li><li>Your data never leaves the browser</li></ul></section>
+<section class="tool-sec"><h2>Frequently asked questions</h2><div class="faq-item"><h3>How is BMI calculated?</h3><p>BMI = weight (kg) ÷ height (m)². For example, 65 kg at 1.7 m gives a BMI of about 22.5.</p></div><div class="faq-item"><h3>What are the BMI categories?</h3><p>Per WHO: below 18.5 — underweight, 18.5–24.9 — normal, 25–29.9 — overweight, 30 or more — obese.</p></div><div class="faq-item"><h3>Is BMI accurate for everyone?</h3><p>It can mislead for athletes, pregnant women and older adults, because it doesn&#x27;t distinguish muscle from fat. It&#x27;s only a first screening step.</p></div><div class="faq-item"><h3>Can this replace a doctor&#x27;s advice?</h3><p>No. This tool is for information only. Always consult a doctor before making any weight or health decision.</p></div><div class="faq-item"><h3>Is my data saved?</h3><p>No, the calculation runs entirely in your browser. Your height and weight are never uploaded.</p></div></section>
+<section class="tool-sec"><h2>Related tools</h2><div class="rel-grid"><a class="tool-card" href="/en/tools/age-calculator/"><span class="star" data-id="age-calculator" role="button" tabindex="0" aria-pressed="false" aria-label="Save this tool: Age Calculator">★</span><span class="tool-tile" style="background:#fae8ff">🎂</span><h3>Age Calculator</h3></a><a class="tool-card" href="/en/tools/emi-calculator/"><span class="star" data-id="emi-calculator" role="button" tabindex="0" aria-pressed="false" aria-label="Save this tool: EMI Calculator">★</span><span class="tool-tile" style="background:#fae8ff">🧮</span><h3>EMI Calculator</h3></a><a class="tool-card" href="/en/tools/percentage-calculator/"><span class="star" data-id="percentage-calculator" role="button" tabindex="0" aria-pressed="false" aria-label="Save this tool: Percentage Calculator">★</span><span class="tool-tile" style="background:#dcfce7">📊</span><h3>Percentage Calculator</h3></a><a class="tool-card" href="/en/tools/unit-converter/"><span class="star" data-id="unit-converter" role="button" tabindex="0" aria-pressed="false" aria-label="Save this tool: Unit Converter">★</span><span class="tool-tile" style="background:#ede9fe">📏</span><h3>Unit Converter</h3></a></div></section>
+<!-- AdSense: paste code here after approval -->
+</div>
+<footer class="site-footer"><div class="wrap"><div class="foot-grid">
+<div class="foot-brand"><a class="logo" href="/en/"><span class="logo-mark">T</span><span class="logo-name">Toolkit</span></a><p>All free online tools in one place.</p>
+<div class="foot-social"><a href="#" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.7 3H21l-7.1 8.2L22.2 21h-6.6l-5.1-6.1L4.6 21H1.3l7.6-8.8L1.8 3h6.7l4.6 5.6L17.7 3zm-1.2 16h1.8L7.1 4.9H5.2l11.3 14.1z"/></svg></a><a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 7.2s-.2-1.6-.9-2.3c-.9-.9-1.9-.9-2.4-1C16.4 3.6 12 3.6 12 3.6s-4.4 0-7.7.3c-.5.1-1.5.1-2.4 1-.7.7-.9 2.3-.9 2.3S.8 9.1.8 11v1.8c0 1.9.2 3.8.2 3.8s.2 1.6.9 2.3c.9.9 2 .9 2.6 1 1.9.2 7.5.3 7.5.3s4.4 0 7.7-.4c.5-.1 1.5-.1 2.4-1 .7-.7.9-2.3.9-2.3s.2-1.9.2-3.8V11c0-1.9-.2-3.8-.2-3.8zM9.8 15.1V8.4l6.2 3.4-6.2 3.3z"/></svg></a><a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.3" fill="currentColor" stroke="none"/></svg></a></div>
+</div>
+<div class="foot-col">
+<h4>Tools</h4>
+<a href="/en/tools/">Tools</a>
+<a href="/en/ai-tools/">481+ AI Tools</a>
+<a href="/en/free-apis/">50+ Free APIs</a>
+<a href="/en/saved/">Saved</a>
+</div>
+<div class="foot-col">
+<h4>Legal</h4>
+<a href="/en/about/">About us</a>
+<a href="/en/contact/">Contact</a>
+<a href="/en/privacy/">Privacy</a>
+<a href="/en/terms/">Terms</a>
+</div>
+</div>
+<div class="foot-bottom"><span>© 2026 Toolkit · All rights reserved</span></div>
+</div></footer>
+<script src="/assets/site.js" defer></script>
+</body></html>
